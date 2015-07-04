@@ -8,7 +8,7 @@ I love this field, it provide me with more oppotunities to come across more new 
 我喜欢这个行业，它给我很多机会去接触新的想法，去融入不同的文化背景，去认识很多不错的朋友。我一直在尝试平衡兴趣与事业，现在我觉得跨境电商正可以平衡两者
 
 focus on interesting things is a good way to succeed in carrer and I find there are lots of brilliant innovation waiting to be added into this field, so I'm just trying to do everything to improve the shopping experience. 
-专注于感兴趣的事更有助于事业成功。并且我发现有很多非常好的创新正需要加入到这个领域，所以我也是正在努力尽一世方法去提高购物体验。
+专注于感兴趣的事更有助于事业成功。并且我发现有很多非常好的创新正需要加入到这个领域，所以我也是正在努力尽一切方法去提高购物体验。
  
 pandoraf is a shorthand of Pandora Framework, in the hope of being able to give the world a big surprise just as Pandora Box. 
 pandoraf 是潘朵拉框架的简写，希望能够给世界带来大大的惊喜，就像潘朵拉魔盒一样。
