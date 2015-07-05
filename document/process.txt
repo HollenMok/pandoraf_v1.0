@@ -1,0 +1,54 @@
+#execute process 
+/执行流程
+
+#following steps are the design analysis of executing process
+/下面步骤是pandoraf框架的执行流程设计分析
+
+step1:Url Request
+  eg. www.pandoraf.com/index.php?com=account&t=login&email=461836320@qq.com&pwd=pf1688. 
+Analysis:
+  First, enter the root directory file of www.pandoraf.com.
+  Second, dispatch the entrance file, index.php.
+  Third, match the controller by the  component named account.
+  Fourth, match the function by the task named login. 
+  Fifth, deliver two parameters email and password to execute the customer login operation. 
+
+/第一步：用户URL请求
+    例如，www.pandoraf.com/index.php?com=account&t=login&email=461836320@qq.com&pwd=pf1688
+分析：
+    首先进入www.pandoraf.com程序文件目录，然后调用项目程序入口文件index.php,
+     再读取组件（component）名称为account中的控制器，
+    调用任务（task)中名为login的方法，
+    并传递参数邮件地址email与密码pwd，从而执行用户帐号登陆的功能。
+
+
+
+step2:enter index.php
+/第二步：调用 应用入口文件index.php
+
+step3:enter pandoraf.php
+/第三步：载入框架入口文件
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
