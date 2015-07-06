@@ -20,7 +20,7 @@ class execute{
 	
 	}
 	public function display(){
-		echo $this->controller;exit; 
+		require '\../applications/pandoraf/index.php';
 	}
 		
 }

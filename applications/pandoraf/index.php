@@ -13,14 +13,6 @@
 //   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
 //-+---------------------------------------------------------------------------------------------+
 
-//eg. url request=www.pandoraf.com/index.php?com=account&t=login&email=461836320@qq.com&pwd=pf1688
-$controller = $_GET['com'];
-$task = $_GET['t'];
 
-require './pf_core/execute.php';
-$execute = new execute();
-$execute->controller = $controller;
-$execute->task = $task; 
-$execute->display();
  
 ?>

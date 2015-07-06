@@ -18,6 +18,13 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))
 	die('require PHP version >5.3.0 !');
 
+define('ROOT',__DIR__);
+//Smarty engine/Smarty 引擎
+require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
+$smarty = new Smarty();
+$email = '461836320@qq.com';
+$smarty->assign('email',$email);
+$smarty->display('index.html');exit; 
 //dispatch the core file/调用核心文件
 require './pf_core/core.php';
 
