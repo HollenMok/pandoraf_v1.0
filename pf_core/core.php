@@ -17,7 +17,7 @@
 $controller = $_GET['com'];
 $task = $_GET['t'];
 
-require './pandoraf/execute.php';
+require './pf_core/execute.php';
 $execute = new execute();
 $execute->controller = $controller;
 $execute->task = $task; 

@@ -19,7 +19,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))
 	die('require PHP version >5.3.0 !');
 
 //dispatch the core file/调用核心文件
-require './pandoraf/core.php';
+require './pf_core/core.php';
 
 ?>
 
