@@ -13,4 +13,11 @@
 //   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
 //-+---------------------------------------------------------------------------------------------+
 
+//Smarty engine/Smarty 引擎
+require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
+$smarty = new Smarty();
+$email = '461836320@qq.com';
+$smarty->assign('email',$email);
+$smarty->display('index.html');exit; 
+
 ?>

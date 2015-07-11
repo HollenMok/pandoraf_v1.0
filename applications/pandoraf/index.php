@@ -14,5 +14,7 @@
 //-+---------------------------------------------------------------------------------------------+
 
 
+require ROOT.'/applications/pandoraf/components/com_account/account.php';
+
  
 ?>
