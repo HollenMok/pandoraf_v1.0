@@ -20,7 +20,8 @@ class execute{
 	
 	}
 	public function display(){
-		require '\../applications/pandoraf/index.php';
+		
+		require ROOT.'/applications/pandoraf/index.php';
 	}
 		
 }

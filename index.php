@@ -25,9 +25,8 @@ $GLOBALS['startMemoryUsed'] = memory_get_usage();
 
 //root directory/根目录
 define('ROOT',__DIR__);
-
 //dispatch the core file/调用核心文件
-require './pf_core/core.php';
+require ROOT.'/pf_core/core.php';
 
 ?>
 
