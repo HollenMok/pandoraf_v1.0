@@ -13,4 +13,18 @@
 //   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
 //-+---------------------------------------------------------------------------------------------+
 
+class AccountController {
+	public function __construct(){
+		echo
+		'<link href="/applications/pandoraf/templates/view/css/style.css" type="text/css" rel="stylesheet"/>'.
+		'<meta http-equiv="Content-type" content="text/html; charset=utf-8" />'.
+		'wake up, pandoraf ！ <br/><br/>'.
+		'<a href="https://github.com/HollenMok/">醒醒 , 潘朵拉神 ！</a> <br/>'.
+		'<a  class="foot" href="http://www.miitbeian.gov.cn">备案号：粤ICP备15060806号-1 </a>';exit;
+	}
+	
+	public function login(){
+		
+	}
+}
 ?>

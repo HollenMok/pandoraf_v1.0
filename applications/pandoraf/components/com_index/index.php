@@ -12,11 +12,6 @@
 //   Document support multi-language, aim to invite people worldwide join this project
 //   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
 //-+---------------------------------------------------------------------------------------------+
-
-$controller = $_GET['com'];
-$task = $_GET['t'];
-
-//require ROOT.'/applications/pandoraf/components/com_account/account.php';
-require ROOT.'/applications/pandoraf/components/com_'.$controller.'/'.$controller.'.php';
- $controller 
-?>
+require 'controller.php';
+$controller = new IndexController();
+$controller->recommendation();
