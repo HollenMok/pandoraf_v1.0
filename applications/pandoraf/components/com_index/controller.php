@@ -14,7 +14,12 @@
 //-+---------------------------------------------------------------------------------------------+
 class IndexController{
 	public function __construct(){
-		
+		//Smarty engine/Smarty 引擎
+		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
+		$smarty = new Smarty();
+		$email = '461836320@qq.com';
+		$smarty->assign('email',$email);
+		$smarty->display('web/display/index.html');exit;
 	}
 	public function recommendation(){
 		echo 'wake up pandoraf index!';
@@ -22,7 +27,5 @@ class IndexController{
 	public function display(){
 		echo 'back home pandoraf!';
 	}
-	
-	public 
 	
 }
