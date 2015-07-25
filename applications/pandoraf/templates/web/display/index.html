@@ -4,20 +4,101 @@
  <title>pandoraf</title>
 </head>
 <body>
-wake up, pandoraf ！ <br/><br/>
-<a href="https://github.com/HollenMok/">醒醒 , 潘朵拉神 ！</a> <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-Email:<input type="text" id="email" class="color"/>
-<br/>
-Password:<input type="password" id="password" class="color"/>
-<br/>
-<input type="button" value="Sign in" id="signin" class="color"/>
+<body class="luncky">
+<div class="luncky_top">
+	<div class="wrap1">
+		<div class="logo"><a href="/index.php"><img src="/applications/pandoraf/templates/web/images/lucky_logo.jpg" /></a></div>
+		<div class="nav">
+			<ul>
+				<li>
+					<b><a href="">首页</a></b>
+				</li>
+				<li>
+					<b><a href="">架构</a></b>
+				</li>
+				<li>
+					<b><a href="">路由</a></b>    
+				</li>
+				<li>
+					<b><a href="">MVC</a></b>
+				</li>
+				<li>
+					<b><a href="">缓存</a></b>
+				</li>
+				<li>
+					<b><a href="">安全</a></b>
+				</li>
+				<li>
+					<b><a href="">扩展</a></b>
+				</li>
+				<li>
+					<b><a href="">管理中心</a></b>
+				</li>
+				<li>
+					<b><a href="">登陆</a></b>
+				</li>
+			</ul>
+		</div>
+		<div class="bag">
+			<a href=""><i></i><span>留言 (0)</span></a>s
+		</div>
+	</div>
+</div>
+<div class="wrap1">
+<div class="line"><img src="/applications/pandoraf/templates/web/images/lucky_line.jpg" /></div>
+	<div class="sign_up">
+		<div class="sign_left"><img src="/applications/pandoraf/templates/web/images/pf007.jpg" /></div>
+		<input type="hidden" value="{$customers_id}" id="customersId"/>
+		<input type="hidden" value="{$isPrizeAvailable}" id="isPrizeAvailable"/>
+		<div class="sign_right">
+		{if $customers_id}
+		<h1><span >Congratulation, success in registering!</span></h1>		
+		{else}
+			<h1><span>Pandoraf</span> is just a<span> simple</span> and<span> innovative </span>php framework,<span> wake up!</span></h1>
+			<div class="operalForm">
+				<div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> 邮箱 </div>
+					<i></i>
+                    <input class="inputtext" name="" type="text" id="email">
+                    {if 0}
+                    <span class="error">
+                    	Please enter a valid email address
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> 密码 </div>
+					<em></em>
+                    <input class="inputtext" name="" type="password" id="password">
+                    {if 0}
+                    <span class="error">
+                    	Please enter a valid password
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> 重复输入密码 </div>
+					<em></em>
+                    <input class="inputtext" name="" type="password" id="rePassword">
+                    {if 0}
+					<span class="error">
+                    	Please enter a valid password
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_b">
+                    <span class="form_submit"><input name="" type="buttom" id="register" />注册</span>
+                <div class="sign_other">
+					<span class="log_facebook" ><i></i>Facebook登陆</span>
+				</div>
+                </div>
+            </div>
+            {/if}
+		</div>
+	</div>
+	<div class="line"><img src="/applications/pandoraf/templates/web/images/lucky_line.jpg" /></div>
+</div>
+
 
 {include file='web/display/foot.html'}
 </body>
