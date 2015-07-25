@@ -12,4 +12,7 @@ class LuckyModuleLucky{
 	public function __construct(){
 		
 	} 
+	public function lucky(){
+		return 30;
+	}
 }

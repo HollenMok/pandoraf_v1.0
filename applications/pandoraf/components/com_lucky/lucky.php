@@ -9,4 +9,8 @@
  */
 require 'controller.php';
 $controller = new LuckyController();
-$controller->display();
+if($task){
+	$controller->$task();
+}else{
+	$controller->display();
+}

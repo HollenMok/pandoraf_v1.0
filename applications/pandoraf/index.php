@@ -15,7 +15,6 @@
 
 $controller = $_GET['com'];
 $task = $_GET['t'];
-
 if($controller){
 	require ROOT.'/applications/pandoraf/components/com_'.$controller.'/'.$controller.'.php';
 }else{
