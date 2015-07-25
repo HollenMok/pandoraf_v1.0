@@ -1,1 +1,117 @@
-wake up lucky template!
+<html>
+<head>
+ {include file='web/display/head.html'}
+ <title>pandoraf lucky</title>
+</head>
+<body>
+<body class="luncky">
+<div class="luncky_top">
+	<div class="wrap1">
+		<div class="logo"><a href="/index.html"><img src="/applications/pandoraf/templates/web/images/lucky_logo.jpg" /></a></div>
+		<div class="nav">
+			<ul>
+				<li>
+					<b><a href="/index.html">Home</a></b>
+				</li>
+				<li>
+					<b><a href="/new-arrivals.html">Weekly new</a></b>
+				</li>
+				<li>
+					<b><a href="/Wholesale-Dresses-c-3603.html">Dresses</a></b>    
+				</li>
+				<li>
+					<b><a href="/Wholesale-Tops-c-3604.html">Tops</a></b>
+				</li>
+				<li>
+					<b><a href="/Wholesale-Outerwear-c-3608.html">Outerwear</a></b>
+				</li>
+				<li>
+					<b><a href="/top-sellers.html">Top Sale</a></b>
+				</li>
+				<li>
+					<b><a href="/index.php?com=account">Account</a></b>
+				</li>
+				<li>
+					<b><a href="/index.php?com=account&t=logout">Logout</a></b>
+				</li>
+			</ul>
+		</div>
+		<div class="bag">
+			<a href="/shopping_cart.php"><i></i><span>Bag (0)</span></a>s
+		</div>
+	</div>
+</div>
+
+<div class="wrap1">
+	<div class="demo"> 
+		<div class="start"></div> 
+		<div class="disk"><img src="/applications/pandoraf/templates/web/images/luckyCompass.png"></div> 
+		<div class="start"><img id="startbtn" src="/applications/pandoraf/templates/web/images/luckyStart.png" style="transform:rotate(0deg); transform-origin:50% 50% 0px;"></div>
+	</div>
+	<div class="luncky_winner">
+		<h1>Today's Winners</h1>
+		<span>We only show the newest 10 lucky numbers to protect privacy.</span>
+		<ul>
+		    <span class="luckyList">{$registrant}</span>
+		</ul>
+	</div>
+	<div class="line"><img src="/applications/pandoraf/templates/web/images/lucky_line.jpg" /></div>
+</div>
+
+<div class="wrap1">
+	<div class="sign_up">
+		<div class="sign_left"><img src="/applications/pandoraf/templates/web/images/lucky_gift.jpg" /></div>
+		<input type="hidden" value="{$customers_id}" id="customersId"/>
+		<input type="hidden" value="{$isPrizeAvailable}" id="isPrizeAvailable"/>
+		<div class="sign_right">
+		{if $customers_id}
+		<h1><span >Congratulation, success in registering!</span></h1>		
+		{else}
+			<h1><span>Sign up</span> to be the lucky one,<span>1000 free gifts</span> awaiting per day,<span>100% winning!</span></h1>
+			<div class="operalForm">
+				<div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> Email </div>
+					<i></i>
+                    <input class="inputtext" name="" type="text" id="email">
+                    {if 0}
+                    <span class="error">
+                    	Please enter a valid email address
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> Password </div>
+					<em></em>
+                    <input class="inputtext" name="" type="password" id="password">
+                    {if 0}
+                    <span class="error">
+                    	Please enter a valid password
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_t">
+                    <div class="l_input_title"> <strong>*</strong> Re-enter password </div>
+					<em></em>
+                    <input class="inputtext" name="" type="password" id="rePassword">
+                    {if 0}
+					<span class="error">
+                    	Please enter a valid password
+                    </span>
+                    {/if}
+                </div>
+                <div class="ipt_b">
+                    <span class="form_submit"><input name="" type="buttom" id="register" />Sign up</span>
+                <div class="sign_other">
+					<span class="log_facebook" ><i></i>Sign up with Facebook</span>
+				</div>
+                </div>
+            </div>
+            {/if}
+		</div>
+	</div>
+</div>
+
+
+{include file='web/display/foot.html'}
+</body>
+</html>

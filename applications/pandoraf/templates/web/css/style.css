@@ -1,3 +1,75 @@
 /* pandoraf.com @2015_v1.0*/
+    html{ height:100%;}
+	body{ height:100%;padding:0;margin:0;line-height:1; font-size:12px; -webkit-text-size-adjust:none; color:#333333; background:#ffffff;}
+	body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p {padding:0; margin:0; font-weight: normal; outline:none; font-family:Arial,Helvetica,sans-serif;}
+	th{ text-align:left;}
+	select,input,textarea{ outline:none; font-size:12px; background:#FFFFFF;}
+	img { border: 0;}
+	ol,ul {list-style:none;}
+	li{ vertical-align:top;}
+	h1,h2,h3,h4,h5,h6 { font-size: 100%;}
+	table { border-collapse:collapse;border-spacing:0;}
+	a{text-decoration:none; color:#333; outline:none;}
+	a:hover{color:#e33057; text-decoration:underline;}
+.wrap{ width:1200px; margin:0 auto;}
 .color{ font-size:16px; color:#666666; line-height:2.4;}
 .foot{ position:fixed; bottom:0; left:0; width:100%;}
+
+/* Lucky_Draw */
+	.wrap1{ width:1000px; margin:0 auto; overflow:hidden;}
+	.luncky{ background:#f9f9f9;}
+	.luncky_top{ height:57px; background:#000000;}
+	.luncky_top .logo{ float:left; width:131px; height:57px;}
+	.luncky_top .logo a{ display:block;}
+	.luncky_top .nav{ float:left; line-height:57px; color:#FFFFFF; padding-left:50px;}
+	.luncky_top .nav li{ float:left;}
+	.luncky_top .nav li a{ color:#FFFFFF; font-size:14px;}
+	.luncky_top .nav li b{ border-left:1px #666 solid; padding:0 18px; font-weight:normal;}
+	.luncky_top .nav li:first-child b{ border:none;}
+	.luncky_top .bag{ float:right; position:relative;}
+	.luncky_top .bag a{ float:left; line-height:34px; color:#FFFFFF; margin-top:11px;}
+	.luncky_top .bag i{ background:url(../images/sprite_home.png) no-repeat -475px -115px; width:34px; height:34px; position:absolute;}
+	.luncky_top .bag a span{ padding-left:40px;}
+    .demo{width:440px; height:440px; position:relative; float:left; margin-top:50px;} 
+    .demo .disk{width:440px; height:440px;}
+    .demo .start{width:163px; height:320px; position:absolute; top:60px; left:140px;} 
+    .demo .start img{ cursor:pointer;}
+	
+	.luncky_winner{ float:left; padding:100px 0 0 60px;}
+	.luncky_winner h1{ color:#e33057; font-size:26px; text-transform:uppercase;}
+	.luncky_winner span{ font-size:16px; color:#666666; line-height:2.4;}
+	.luncky_winner ul{ padding-top:10px;}
+	.luncky_winner ul li{ display:block; line-height:2; font-size:14px; color:#666666;}
+	.line{ float:left; margin:60px 0 40px 0;}
+	
+.sign_up{ width:1000px; overflow:hidden; padding-bottom:50px;}
+	.sign_up .sign_left{ width:260px; float:left; padding-left:20px;}
+	.sign_up .sign_right{ float:left; padding-left:30px;}
+	.sign_up .sign_right h1{ font-size:20px; padding-top:25px;}
+	.sign_up .sign_right h1 span{ color:#e33057;}
+	.sign_up .l_input_title{ font-weight:bold; color:#000; display:block; padding-bottom:10px;}
+	.sign_up .operalForm{ padding-top:30px;}
+	.sign_up .operalForm .error{ line-height:20px; color:#e33057; font-weight:bold; padding-left:5px;}
+	.sign_up .operalForm .ipt_t{ position:relative; padding-bottom:16px;}
+	.sign_up .operalForm .ipt_t strong{ color:#e33057;}
+	.sign_up .operalForm .ipt_t i{ background:url(../images/sprite_home.png) no-repeat -94px -179px; width:23px; height:23px; position:absolute; top:30px; left:8px;}
+	.sign_up .operalForm .ipt_t em{ background:url(../images/sprite_home.png) no-repeat -133px -179px; width:23px; height:23px; position:absolute; top:30px; left:8px;}
+	.sign_up .operalForm .ipt_t .inputtext{ width:290px; height:38px; line-height:38px; border:1px solid #dddddd; padding-left:38px;}
+	.sign_up .operalForm .ipt_b{ position:relative;}
+	.sign_up .form_submit{ height:42px; line-height:42px; padding:0 13px; font-size:16px; float:left;}
+	.sign_up .log_facebook{ background:url(../images/buy_link.png) repeat-x 0 -87px; border:1px solid #293f69; border-radius:3px; color:#FFFFFF; cursor:pointer; width:196px; display:block; float:left; height:40px; line-height:40px; padding-right:15px; margin-left:10px; top:0; font-size:14px;}
+	.sign_up .log_facebook i{ background:url(../images/buy_link.png) no-repeat 15px -132px rgba(255, 255, 255, 0.09); width:40px; height:40px; float:left; margin-right:10px;}
+	
+	.foot .join.luncky_join{ width:380px;}
+	.foot .newsletter.luncky_newsletter{ width:300px; text-decoration:underline;}
+	.foot .foot_3.luncky_footer{ width:1000px;}
+	/*submit*/
+	.form_submit{position:relative; text-align:center; cursor:pointer; overflow:hidden; background:#e33057; border-radius:3px; color: #fff; display:inline-block; height: 35px; line-height: 35px; padding:0 20px; min-width:80px; font-size:14px;}
+	.form_submit:hover{ background:#ee3e64;}
+	.form_submit input{ position:absolute; width:100%; height:100%;padding:0 10px;left:0; top:0;background:#ffffff; border:0;opacity:0;filter:alpha(opacity:0);cursor:pointer;}
+	.form_submit.not_submit{ position:relative; text-align:center; cursor:pointer; overflow:hidden; background: none repeat scroll 0 0 #e8e8e8; border-radius: 4px; color: #999999; display:inline-block; height: 35px; line-height: 35px; margin-right: 10px; padding: 0 20px; min-width:80px;}
+	.form_submit.not_submit input{ position:absolute; width:100%; height:100%;padding:0 10px;left:0; top:0;background:#ffffff; border:0;opacity:0;filter:alpha(opacity:0);cursor:default;}
+	.form_submit.formsubmitgray{ background:#e8e8e8 url(../images/loading_3.gif) no-repeat center center; border-color:#e2e2e2; color:#f1f1f1; text-indent:-1000px; cursor:default; height: 35px; display:inline-block; padding: 0 20px; border-radius:4px; min-width:80px;}
+	.form_submit.formsubmitgray:hover{ background:#e8e8e8 url(../images/loading_3.gif) no-repeat center center;}
+	
+	
