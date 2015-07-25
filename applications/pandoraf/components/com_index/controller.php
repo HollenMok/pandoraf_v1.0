@@ -14,7 +14,12 @@
 //-+---------------------------------------------------------------------------------------------+
 class IndexController{
 	public function __construct(){
-		
+		echo
+		'<link href="/applications/pandoraf/templates/view/css/style.css" type="text/css" rel="stylesheet"/>'.
+		'<meta http-equiv="Content-type" content="text/html; charset=utf-8" />'.
+		'wake up, pandoraf ！ <br/><br/>'.
+		'<a href="https://github.com/HollenMok/">醒醒 , 潘朵拉神 ！</a> <br/>'.
+		'<a  class="foot" href="http://www.miitbeian.gov.cn">备案号：粤ICP备15060806号-1 </a>';exit;
 	}
 	public function recommendation(){
 		echo 'wake up pandoraf index!';
@@ -23,6 +28,5 @@ class IndexController{
 		echo 'back home pandoraf!';
 	}
 	
-	public 
 	
 }

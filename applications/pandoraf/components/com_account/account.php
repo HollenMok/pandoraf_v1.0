@@ -21,5 +21,5 @@ require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
 $smarty = new Smarty();
 $email = '461836320@qq.com';
 $smarty->assign('email',$email);
-$smarty->display('view/display/index.html');exit; 
+$smarty->display('web/display/index.html');exit; 
 ?>
