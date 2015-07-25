@@ -15,7 +15,16 @@
 
 //application config file class/程序项目配置文件类
 class config{
-	
+	public $connection = array(
+			'pf'=>array(
+			    'host'=>'120.25.227.212',
+			    'database' => 'pf',	
+			    'user' =>'root',
+				'password' =>'XXXXXXXX'
+			 ));
+	public function __construct(){
+		
+	}
 }
 
 ?>
