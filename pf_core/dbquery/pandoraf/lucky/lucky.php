@@ -7,8 +7,13 @@
  * @author HollenMok
  * @date 2015-07-025
  */
-class LuckySqlqueryLucky{
+class luckyDbqueryLucky{
+	
+	public function __construct(){
+		require ROOT.'/pf_core/factory.php';
+		$dbInstance  = PFactory::dbInstance();
+	}
 	public function getNewRegistrant(){
-		
+		 
 	}
 }

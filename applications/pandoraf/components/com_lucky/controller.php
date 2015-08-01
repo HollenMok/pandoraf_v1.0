@@ -31,6 +31,8 @@ class LuckyController{
 		echo $result;exit;
 	}
 	public function sqlTest(){
+		require ROOT.'/pf_core/dbquery/pandoraf/lucky/lucky.php';
+		$luckySql = new luckyDbqueryLucky();
 		//密码保密/password is confidential 
 		$connection = mysql_connect('localhost','root','xxxxxxxxx');
 		$result = mysql_db_query('pf','select * from lucky_registrant',$connection);
