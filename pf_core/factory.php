@@ -14,10 +14,12 @@
 //-+---------------------------------------------------------------------------------------------+
 
 //factory pattern design/工厂设计模式 
-class PFactory{
-	
-	public function __construct(){
-		
+class pFactory{
+	//私有静态成员变量标记是否已创建实例,并保存唯一的实例(采用单例模式singleton design mode)
+	private static $_dbInstance = null; 
+	//私有构造函数不被外部访问
+	private function __construct(){
+		echo "pfFactoryTest" ;exit; 
 	}
 	
     /*
@@ -26,8 +28,12 @@ class PFactory{
 	* @date 2015/08/01
 	*/
 	public static function dbInstance(){
-		require ROOT.'/applications/pandoraf/install/config.php';
-		$pConfig = new config();
-		echo "<pre>";print_r($pConfig->connection);exit;  
+        if(!self::$_dbInstance){
+        	require ROOT.'/applications/pandoraf/install/config.php';
+        	$pConfig = new config();
+        	$_dbInstance = new pMysql($pConfig->connection->pf); 
+        }
+        return self::$_dbInstance;
+	
 	}
 }

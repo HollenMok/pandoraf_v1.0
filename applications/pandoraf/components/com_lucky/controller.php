@@ -31,6 +31,12 @@ class LuckyController{
 		echo $result;exit;
 	}
 	public function sqlTest(){
+		require ROOT.'/pf_core/factory.php';
+		$pFactory = new pFactory();
+		print_r($pFactory);
+		$dbInstance = pFactory::dbInstance();
+		
+		exit; 
 		require ROOT.'/pf_core/dbquery/pandoraf/lucky/lucky.php';
 		$luckySql = new luckyDbqueryLucky();
 		//密码保密/password is confidential 

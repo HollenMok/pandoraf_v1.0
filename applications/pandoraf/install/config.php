@@ -17,11 +17,12 @@
 class config{
 	public $connection = array(
 			'pf'=>array(
-			    'host'=>'120.25.227.212',
-			    'database' => 'pf',	
+			    'host'=>'localhost',
+			    'db' => 'pf',	
 			    'user' =>'root',
-				'password' =>'XXXXXXXX'
+				'pwd' =>'Alibeans1688'
 			 ));
+	         
 	public function __construct(){
 		
 	}
