@@ -20,7 +20,7 @@ class config{
 			    'host'=>'localhost',
 			    'db' => 'pf',	
 			    'user' =>'root',
-				'pwd' =>'Alibeans1688'
+				'pwd' =>'XXXXX'
 			 ));
 	         
 	public function __construct(){
