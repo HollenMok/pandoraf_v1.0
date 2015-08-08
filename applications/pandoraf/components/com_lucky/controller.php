@@ -28,24 +28,7 @@ class LuckyController{
 	*/
 	public function lucky(){
 		$result = $this->LuckyModuleLucky->lucky();
-		echo $result;exit;
-	}
-	public function sqlTest(){
-		require ROOT.'/pf_core/factory.php';
-		$pFactory = new pFactory();
-		print_r($pFactory);
-		$dbInstance = pFactory::dbInstance();
-		
-		exit; 
-		require ROOT.'/pf_core/dbquery/pandoraf/lucky/lucky.php';
-		$luckySql = new luckyDbqueryLucky();
-		//密码保密/password is confidential 
-		$connection = mysql_connect('localhost','root','xxxxxxxxx');
-		$result = mysql_db_query('pf','select * from lucky_registrant',$connection);
-		$row = mysql_fetch_row($result); 
-		mysql_free_result($result);
-		mysql_close($connection);
-		echo "<pre>";print_r($row);exit;  
+		echo "<pre>";print_r($result);exit;
 	}
 	
 }
