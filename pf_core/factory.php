@@ -17,9 +17,9 @@
 class pFactory{
 	//私有静态成员变量标记是否已创建实例,并保存唯一的实例(采用单例模式singleton design mode)
 	private static $_dbInstance = null; 
-	//私有构造函数不被外部访问
-	private function __construct(){
-		echo "pfFactoryTest" ;exit; 
+	
+	public function __construct(){
+		 
 	}
 	
     /*
@@ -28,10 +28,11 @@ class pFactory{
 	* @date 2015/08/01
 	*/
 	public static function dbInstance(){
-        if(!self::$_dbInstance){
-        	require ROOT.'/applications/pandoraf/install/config.php';
+        if(!self::$_dbInstance){  	 
+         	require ROOT.'/applications/pandoraf/install/config.php';
         	$pConfig = new config();
-        	$_dbInstance = new pMysql($pConfig->connection->pf); 
+        	require ROOT.'/pf_core/sys/dbInstance/mysql.php';	 
+        	$_dbInstance = new pMysql($pConfig->connection[pf]);       	
         }
         return self::$_dbInstance;
 	
