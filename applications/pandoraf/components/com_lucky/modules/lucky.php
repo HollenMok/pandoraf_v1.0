@@ -1,7 +1,7 @@
 <?php
 /*
  * -----------------------------
-* module of lucky compoment
+* module of lucky component
 * 幸运组件模块
 * -----------------------------
 * @author HollenMok
@@ -9,10 +9,13 @@
 *
 */
 class LuckyModuleLucky{
+	public $luckyQuery;
 	public function __construct(){
-		
+		require ROOT.'/pf_core/dbquery/pandoraf/lucky/lucky.php';	
+		$this->luckyQuery = new luckyDbqueryLucky();		
 	} 
 	public function lucky(){
-		return 30;
+		$result = $this->luckyQuery->getNewRegistrant();
+		return $result;
 	}
 }

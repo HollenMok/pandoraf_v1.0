@@ -26,10 +26,6 @@ class pMysql{
 	   $this->connection = mysql_connect($this->host,$this->user,$this->pwd);
 	   if(!$this->connection){
 	   	die('failed to connect mysql!');
-	   }else{
-	   	$this->dbQuery();
-	   	$row = $this->getRow();
-	   	echo "<pre>".'pfTest'; print_r($row);exit; 
 	   }
 	}
 	//free resource/释放查询资源
@@ -41,9 +37,9 @@ class pMysql{
 		mysql_close($this->connection);
 	}
 	//execute query/执行查询 
-	public function dbQuery(){
+	public function dbQuery($sql){
 		//test sql
-		$this->sql = 'select * from lucky_registrant';
+		$this->sql = $sql;
 		$this->queryResult = mysql_db_query($this->db,$this->sql, $this->connection);
 		return $queryResult; 
 	}

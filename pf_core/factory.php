@@ -32,7 +32,8 @@ class pFactory{
          	require ROOT.'/applications/pandoraf/install/config.php';
         	$pConfig = new config();
         	require ROOT.'/pf_core/sys/dbInstance/mysql.php';	 
-        	$_dbInstance = new pMysql($pConfig->connection[pf]);       	
+        	self::$_dbInstance = new pMysql($pConfig->connection[pf]); 
+        	
         }
         return self::$_dbInstance;
 	
