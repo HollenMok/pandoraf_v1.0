@@ -48,6 +48,13 @@ class pMysql{
         $row = mysql_fetch_row($this->queryResult);
     	return $row; 
    	}
+   	//get all result after querying/取所有查询结果数据
+   	public function getAll(){
+   		while($row = mysql_fetch_assoc($this->queryResult)){
+   			$result[] = $row;
+   		}
+   		return $result; 
+   	}
 }
 
 

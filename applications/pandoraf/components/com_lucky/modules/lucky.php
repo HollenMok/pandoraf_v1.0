@@ -18,4 +18,8 @@ class LuckyModuleLucky{
 		$result = $this->luckyQuery->getNewRegistrant();
 		return $result;
 	}
+	public function register(){
+		$result = $this->luckyQuery->register();
+		return $result;
+	}
 }

@@ -30,5 +30,9 @@ class LuckyController{
 		$result = $this->LuckyModuleLucky->lucky();
 		echo "<pre>";print_r($result);exit;
 	}
+	public function register(){
+		$result = $this->LuckyModuleLucky->register();
+		echo "<pre>";print_r($result);exit;
+	}
 	
 }

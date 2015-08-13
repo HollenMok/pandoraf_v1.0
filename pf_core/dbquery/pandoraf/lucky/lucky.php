@@ -23,4 +23,15 @@ class luckyDbqueryLucky{
 		 $row = $this->dbInstance->getRow();
 		 return $row;
 	}
+	public function register(){
+		
+		$sql = 'insert into customers (customers_email_address,customers_password)values("pf1001@yahoo.com","pf1001")';
+		$this->dbInstance->dbQuery($sql);
+		
+		$sql = 'select * from customers';
+		$this->dbInstance->dbQuery($sql);
+		$row = $this->dbInstance->getAll();
+		return $row;
+	}
+	
 }
