@@ -55,6 +55,19 @@ class pMysql{
    		}
    		return $result; 
    	}
+
+   	/*
+   	 * @desc get a column of result after querying/取查询结果中的一列数据
+   	 * @param int $col  column number/列号 
+   	 * @return array
+   	 */
+   	public function getCol($col=0){
+   		while($row = mysql_fetch_row($this->queryResult)){
+   			$result[] = $row[$col];
+   		}
+   		return $result;
+   	}
+   	
 }
 
 
