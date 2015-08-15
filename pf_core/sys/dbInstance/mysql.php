@@ -63,7 +63,7 @@ class pMysql{
    	 */
    	public function getCol($col=0){
    		while($row = mysql_fetch_row($this->queryResult)){
-   			$result[] = $row[$col];
+   			$result = $row[$col];
    		}
    		return $result;
    	}

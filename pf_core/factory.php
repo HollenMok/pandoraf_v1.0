@@ -19,7 +19,7 @@ class pFactory{
 	private static $_dbInstance = null; 
 	
 	public function __construct(){
-		 
+		
 	}
 	
     /*
@@ -38,4 +38,14 @@ class pFactory{
         return self::$_dbInstance;
 	
 	}
+	
+	public static function sessionInstance(){
+		require ROOT.'/pf_core/sys/sessionInstance/session.php';
+		$session = new pSession();
+		return $session; 
+	}
+	
+	
+	
+	
 }

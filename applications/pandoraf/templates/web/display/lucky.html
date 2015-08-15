@@ -34,7 +34,11 @@
 					<b><a href="/index.php?com=account">Account</a></b>
 				</li>
 				<li>
-					<b><a href="/index.php?com=account&t=logout">Logout</a></b>
+				{if $customers_id}
+					<b><a href="/index.php?com=lucky&t=logout">Logout</a></b>
+				{else}	
+				    <b><span id="login"><a href="/index.php?com=lucky&t=sign">Login</a></span></b>
+				{/if}
 				</li>
 			</ul>
 		</div>
