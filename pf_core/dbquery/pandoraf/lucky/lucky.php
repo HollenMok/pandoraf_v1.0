@@ -49,6 +49,12 @@ class luckyDbqueryLucky{
 	//public function getNewRegistrant(){
 		
 	//}
+	public function isEmailExist($email){
+		$sql = 'select * from customers where customers_email_address='."'$email'";
+		$this->dbInstance->dbQuery($sql);
+		$row = $this->dbInstance->getRow();
+		return $row;
+	}
 	
 }
 

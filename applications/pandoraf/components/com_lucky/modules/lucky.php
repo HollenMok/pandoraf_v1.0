@@ -79,7 +79,11 @@ class LuckyModuleLucky{
 	public function register(){
 		$email = $_POST['email'];
 		$pwd = $_POST['password'];
-		$result = $this->luckyQuery->register($email,$pwd);
+		//验证邮箱是否存在/check email existence
+        $isEmailExist = $this->luckyQuery->isEmailExist($email);
+        if(!$isEmailExist){
+        	$result = $this->luckyQuery->register($email,$pwd);
+        }
 		$session = pFactory::sessionInstance();
 		$_SESSION['customers_id'] = $result;
 		return $result;
@@ -108,6 +112,6 @@ class LuckyModuleLucky{
       echo "success in logout";exit; 
 	}
 	
-	
+
 	
 }
