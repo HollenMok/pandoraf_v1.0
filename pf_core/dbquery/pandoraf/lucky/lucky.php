@@ -23,7 +23,7 @@ class luckyDbqueryLucky{
 		 return $row;
 	}
 	public function register($email, $pwd){
-		$sql = 'insert into customers (customers_email_address,customers_password)values('.$email.','.$pwd.')';
+		$sql = 'insert into customers (customers_email_address,customers_password)values('."'$email'".','."'$pwd'".')';
 		$this->dbInstance->dbQuery($sql);
 		$sql = 'select * from customers order by customers_id desc limit 1';
 		$this->dbInstance->dbQuery($sql);
