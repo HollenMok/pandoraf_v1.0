@@ -45,6 +45,7 @@ class LuckyController{
 	 */
 	public function logout(){
 		$this->LuckyModuleLucky->logout();
+		echo "<script>document.location.href='index.php?com=lucky';</script>";exit; 
 	}
 	
 	

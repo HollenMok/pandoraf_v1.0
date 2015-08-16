@@ -109,7 +109,6 @@ class LuckyModuleLucky{
 	public function logout(){
 	  $session = pFactory::sessionInstance();
 	  $_SESSION['customers_id'] = null; 
-      echo "success in logout";exit; 
 	}
 	
 
