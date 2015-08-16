@@ -5,5 +5,21 @@
 </head>
 <body>
 {include file='web/display/head/head.html'}
+{include file='web/display/common/location.html'}
+<div class="wrap">
+	<div itemscope itemtype="http://schema.org/Product" class="goods_view">
+		<div class="goods_photo">
+			{include file='web/display/product_detail/view.html'}
+		</div>
+		<div class="goods_main">
+			{include file='web/display/product_detail/detail.html'}
+		</div>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+	$(".goods_main_tabs").Swipe({auto:0,continuous:true,disableScroll:false,startSlide:0,tabClick:true,callback: function(pos){}}).find(".carouse_tab li").eq(0).append("Product Detail").end().eq(1).append("Q&amp;A").end().eq(2).append("Payment");
+</script>
+{/literal}
 </body>
 </html>
