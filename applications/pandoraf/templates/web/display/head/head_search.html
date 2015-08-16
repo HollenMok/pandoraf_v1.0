@@ -1,0 +1,21 @@
+<div class="search" style="position:relative">
+	<form id="search_form" method="post" action="{$homeUrl}index.php" >
+	<!--<input type="hidden" name="keywords" value="" id="keywords" />-->
+	<input type="hidden" name="com" value="search" />
+	<input type="hidden" name="t" value="display"  />
+	<div class="inputbox">
+		<span class="tips">search products</span>
+		<input type="text"  value="{$keywords}" class="serach_keyword" name="keywords" autocomplete="off"/>
+	</div>
+	<div id="submit_btn" class="submit"><i><input type="submit" style="display:none;" /></i></div>
+	</form>
+	<ul class="search_result_list" id="search_result_list">
+	</ul>					
+</div>
+{literal}
+<script language="javascript">
+if($('.serach_keyword').val()!=''){
+	$('.tips').css('display','none');
+}
+</script>
+{/literal}
