@@ -16,10 +16,6 @@
 		</div>
 	</div>
 </div>
-{literal}
-<script type="text/javascript">
-	$(".goods_main_tabs").Swipe({auto:0,continuous:true,disableScroll:false,startSlide:0,tabClick:true,callback: function(pos){}}).find(".carouse_tab li").eq(0).append("Product Detail").end().eq(1).append("Q&amp;A").end().eq(2).append("Payment");
-</script>
-{/literal}
+{include file='web/display/product_detail/bottom.html'}
 </body>
 </html>

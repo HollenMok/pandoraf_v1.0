@@ -1,0 +1,60 @@
+{literal}
+<script type="text/javascript">
+/* ===========================================================
+Hover延时处理
+hoverDuring       鼠标经过的延时时间
+outDuring         鼠标移出的延时时间
+hoverEvent        鼠标经过执行的方法
+outEvent          鼠标移出执行的方法
+* =========================================================== */
+
+;(function($) {
+function HoverDelay(obj,options){
+	var defaults = {
+		hoverDuring: 200,
+		outDuring: 200,
+		hoverEvent: function(){
+			$.noop();
+		},
+		outEvent: function(){
+			$.noop();    
+		}
+	};
+	
+	var sets = $.extend(defaults,options || {});
+
+	var hoverTimer, outTimer;
+	obj.hover(function(){
+		clearTimeout(outTimer);
+		hoverTimer = setTimeout(sets.hoverEvent(this), sets.hoverDuring);
+	},function(){
+		clearTimeout(hoverTimer);
+		outTimer = setTimeout(sets.outEvent(this), sets.outDuring);
+	}); 
+}
+$.fn.HoverDelay = function(params) {
+  return this.each(function() {
+	$(this).data('HoverDelay', new HoverDelay($(this), params));
+  });
+}
+})(jQuery);
+
+
+(function($){
+	$(".goods_photo_min .box li").HoverDelay({
+		hoverDuring: 100,
+		outDuring: 100,
+		hoverEvent: function(obj){
+			return function(){
+				var $this = $(obj);
+				$this.parent().parent().find(".active").removeClass("active");
+				$this.addClass("active");
+				$goods_photo_max.find("div").html("<img src='"+$this.children("img").attr("ref")+"' />");
+			}
+		}							
+	});
+	
+})(jQuery);
+
+</script>
+{/literal}
