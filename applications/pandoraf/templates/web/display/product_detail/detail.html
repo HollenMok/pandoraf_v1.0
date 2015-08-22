@@ -28,12 +28,87 @@
 
 </ul>
 <div class="status">in stock, usually dispatched in 1 business day</div>
+<div id="stockMsgCache" style="display:none;"></div>
+<div class="goods_main_tabs" style="visibility: visible;">
+      <div class ='content'>
+           <div class="child">
+                <div class="child_list shopping_content">
+                     <div class="goods_main_list">
+                          <span class="title">price:</span>
+                             <div class="goods_main_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                    <meta content="USA" itemprop="priceCurrency">
+					                <meta content="http://schema.org/InStock" itemprop="availability">
+					                <div class="currency">
+					                        <strong>$us<i></i></strong>
+					                        <div class="box">
+					                              <i></i>
+					                              <ul>
+					                                 <li sel="name" title="title">name<u>tag</u></li>
+					                                 <li sel="name" title="title">name<u>tag</u></li>
+					                                 <li sel="name" title="title">name<u>tag</u></li>
+					                              </ul>
+					                        </div>
+					                </div>
+                             </div>
+                    
+                                    <div class="price_number" class="price_number" itemprop="price" oriprice="554">{4343|string_format:'%.2f'}</div> 
+                     </div>
 
-		<div class="goods_main_buy">
-					<div class="buy_btn">
-						<span class="addcart" onclick="" msg="" mTitle="add cart" mBtn="view bag" mBtn1="close"><b><i></i>add cart</b></span>
-						<span class="addwish" onclick=""><b><i></i>favorite</b></span>
-					</div>
-				</div>
+                    <div class="goods_main_list">
+                          <span class="title">size:</span>
+                          <div class="goods_main_attr" option_id="">
+                                <ul class="size">
+                                   {foreach from=$item.values item=value key=value_id name=optionValue}
+                                        <li value_id="" class="gray  active">
+                                        </li>
+                                   {/foreach}     
+                                </ul>       
+                                <span class="size_chart" ><a href="#size_charts">size chart</a></span>
+                          </div>
+                    </div>
+                     
+                    <div class="goods_main_list">
+                       <span class="title">quantity:</span>
+                          <form id="detailCartForm">
+                                <div class="goods_main_quantity">
+                                       <span class="prev gray" onclick=""></span>
+                                       <input type="text" value="1" oldqty="1" name="qty" id="qty" maximum="999" autocomplete="off" clearStock="100" maxlength="5"/>
+                                       <span class="next" onclick=""></span>
+                                      
+                                </div>
+                          </form>
+                    </div>
+                    <div class="goods_main_msg">
+                         <div class="goods_main_note">
+                           Note: Custom sizing is available if order quantity is 20 or more. Click on wholesale inquiry to begin. 
+                         </div>
+                    </div>
+                     <div class="goods_main_buy">
+					        <div class="buy_btn">
+						           <span class="addcart" onclick="" msg="" mTitle="add cart" mBtn="view bag" mBtn1="close"><b><i></i>add cart</b></span>
+						           <span class="addwish" onclick=""><b><i></i>favorite</b></span>
+					        </div>
+		             </div>
+		        
+		             
+		             
+		      </div>   
+		      <div class="child_list question_content">
+		               <div class="ask">
+		                   <p>question title</p>
+		               </div>
+		      </div>
+		      <div class="child_list payment_content">
+		               <div class="payment">
+		                   <strong class="payment_title">payment methods</strong>
+		               </div>
+		      </div>
+		         
+		
+          </div>
+      </div>
+		
+</div>				
+				
 
 
