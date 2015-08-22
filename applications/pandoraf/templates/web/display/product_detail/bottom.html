@@ -53,7 +53,67 @@ $.fn.HoverDelay = function(params) {
 			}
 		}							
 	});
-	
+
+	$('.goods_photo_max').click(function(){
+		var maxlist = '', minlist = '', a = 0, css = '', goods_zoom_two = '', active, thisIndex;
+		$(".goods_photo_min .box img").each(function(){
+			if(a > 9){
+				if(goods_zoom_two == '') goods_zoom_two = ' goods_zoom_two';
+				css = 'style="top:' + 59 * (a-10) + 'px;left:59px;"';
+				$(".good_photo_zoom_box").addClass("good_photo_zoom_box_2");
+			}
+			else
+			{
+				css = 'style="top:' + 59 * a + 'px;"';
+			}
+			active = '';
+			if($(this).parent().hasClass("active")){
+				active = ' class="active"';
+				thisIndex = a;
+			}
+			maxlist = maxlist + '<li' + active + '><img src="' + $(this).attr("big") + '" /></li>';
+			minlist = minlist + '<li' + active + ' ' + css + '><img src="' + $(this).attr("src") + '" /></li>';
+			a++;
+		});
+		var msg='' +
+			'<div class="goods_zoom' + goods_zoom_two + '">' +
+				'<div class="goods_zoom_swipe">' +
+					'<div class="carouse_swipe_box">' +
+						'<ul>' + maxlist + '</ul>' +
+					'</div>' +
+					'<ul class="carouse_btn">' +
+						'<li class="prev"><i></i></li>' +
+						'<li class="next"><i></i></li>' +
+					'</ul>' +
+					'<ul class="carouse_tab">' +
+					'</ul>' +
+					'<s onclick="$.pfmsgBox._hide();">×</s>'+
+				'</div>' +
+				'<div class="goods_zoom_list">' +
+					'<ul>' + minlist + '</ul>' +
+				'</div>' +
+			'</div>';
+		pfHtml(msg, "none");
+		var zoomlist = $(".goods_zoom_list li");
+		var goods_zoom_swipe = Swipe(
+			$(".goods_zoom_swipe")[0],{auto:0,continuous:true,disableScroll:false,startSlide:thisIndex,callback: function(pos){
+				zoomlist.removeClass("active").eq(pos).addClass("active");
+			}}
+		);
+		
+		zoomlist.HoverDelay({
+			hoverDuring: 100,
+			outDuring: 100,
+			hoverEvent: function(obj){
+				return function(){
+					var $this = $(obj);
+					if($this.index() == zoomlist.find("active").index()) return false;
+					goods_zoom_swipe.slide($this.index());
+				}
+			}							
+		});
+		
+	});
 })(jQuery);
 
 </script>
