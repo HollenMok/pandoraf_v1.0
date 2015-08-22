@@ -49,7 +49,7 @@ $.fn.HoverDelay = function(params) {
 				var $this = $(obj);
 				$this.parent().parent().find(".active").removeClass("active");
 				$this.addClass("active");
-				$goods_photo_max.find("div").html("<img src='"+$this.children("img").attr("ref")+"' />");
+				$('.goods_photo_max').find("div").html("<img src='"+$this.children("img").attr("ref")+"' />");
 			}
 		}							
 	});
