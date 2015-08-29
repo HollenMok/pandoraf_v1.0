@@ -264,7 +264,7 @@ class Smarty extends Smarty_Internal_TemplateBase
      *
      * @var array
      */ 
-    private $template_dir = array('./applications/pandoraf/templates/');
+    private $template_dir = array('./applications/pandoraf/templates/','./pf_admin/pandoraf/templates/');
 
     /**
      * joined template directory string used in cache keys
