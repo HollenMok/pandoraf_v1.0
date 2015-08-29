@@ -22,6 +22,8 @@ class LuckyController{
 		$result = $this->LuckyModuleLucky->getNewRegistrant();
 		$customers_id = $result['customers_id'];
 		$smarty->assign('customers_id',$customers_id);
+		$isPrizeAvailable = $this->LuckyModuleLucky->isPrizeAvailable();
+		$smarty->assign('isPrizeAvailable',$isPrizeAvailable);
 		$smarty->display('web/display/lucky.html');exit;
 	}
 	/*

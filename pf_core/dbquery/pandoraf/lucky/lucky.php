@@ -35,7 +35,14 @@ class luckyDbqueryLucky{
 		return $col;
 	}
 	
-	
+	public function luckyRegistrant($sql_elements){
+		$prize_id = $sql_elements['prize_id'];
+		$create_date = $sql_elements['create_date'];
+		$customers_id = $sql_elements['customers_id'];
+		$expire_date = $sql_elements['expire_date'];
+		$sql = 'insert into lucky_registrant (prize_id,create_date,customers_id,expire_date)values('."'$prize_id'".','."'$create_date'".','."'$customers_id'".','."'$expire_date'".')';
+		$this->dbInstance->dbQuery($sql);
+	}
 	/*
 	 * @desc get rate of every prize
 	 * @author HollenMok
@@ -61,7 +68,16 @@ class luckyDbqueryLucky{
 		$row = $this->dbInstance->getRow();
 		return $row;
 	}
-	
+	public function isPrizeAvailable($customers_id){
+		$sql = 'select prize_available from lucky_registrant where customers_id ='."'$customers_id'";
+		$this->dbInstance->dbQuery($sql);
+		$result = $this->dbInstance->getCol();
+		return $result;
+	}
+	public function setPrizeAvailable($customers_id){
+		$sql = 'update lucky_registrant set prize_available=1  where customers_id ='."'$customers_id'";
+		$this->dbInstance->dbQuery($sql);
+	}
 }
 
 

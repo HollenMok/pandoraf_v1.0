@@ -39,7 +39,9 @@ class LuckyModuleLucky{
 		}
 		//根据概率获取奖项id
 		$rid = $this->getRand($arr);
-		
+		$session = pFactory::sessionInstance();
+		$this->luckyRegistrant($rid);
+		$this->setPrizeAvailable();
 		//中奖项
 		$res = $prize_arr[$rid-1];
 		//中奖角度范围
@@ -146,7 +148,45 @@ class LuckyModuleLucky{
 	  $session = pFactory::sessionInstance();
 	  $_SESSION['customers_id'] = null; 
 	}
-	
-
-	
+   /*
+    * 注册抽奖客户记录
+	* @author HollenMok
+	* @date 2015/08/29
+	* @rid int 奖项id
+	*/
+	public function luckyRegistrant($rid){
+		$customers_id  = $_SESSION['customers_id'];
+		if(!$this->isPrizeAvailable()){
+			$sql_elements = array(
+					'prize_id' => $rid-1,
+					'create_date'  => date("Y-m-d"),
+					'customers_id' => $customers_id,
+					'expire_date' => date("Y-m-d ", strtotime('+30 day'))
+			);
+			$this->luckyQuery->luckyRegistrant($sql_elements);
+	    }	 
+	}
+	/*
+	 * @desc 检测是否已抽奖
+	 * @author HollenMok
+	 * date 2015-08-29
+	 */
+	public function isPrizeAvailable(){
+		$customers_id  = $_SESSION['customers_id'];
+		if($customers_id){
+			$result[0] =  $this->luckyQuery->isPrizeAvailable($customers_id);
+		}
+		return $result[0]?$result[0]:0;
+	}
+	/*
+	 * @desc set drawed 
+	 * @author HollenMok
+	 * @date 2015-08-29
+	 */
+	public function setPrizeAvailable(){
+		$customers_id  = $_SESSION['customers_id'];
+		if($customers_id){
+		  $this->luckyQuery->setPrizeAvailable($customers_id);
+		}
+	}
 }

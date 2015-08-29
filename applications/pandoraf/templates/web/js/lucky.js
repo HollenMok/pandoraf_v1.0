@@ -1,16 +1,27 @@
 $(document).ready(function(){	
 	var p=0; 
+	var hasDraw = true;
 	$(function(){ 
 		var customersId =0; 
 		var isPrizeAvailable =0;
 	     $("#startbtn").click(function(){ 
 	    	 isPrizeAvailable = parseInt($('#isPrizeAvailable').val());
 		     customersId = parseInt($('#customersId').val());
-		     if(customersId){
-		    	
-		    	 lottery(); 
+		     if(isPrizeAvailable ==0 && customersId != 0){
+		    		//registered 
+				 if(hasDraw){
+					 lottery(); 
+					 hasDraw = false; 
+				 } 
 		     }else{
-		    	 alert('please register first!');
+		    	 //haven't registered
+		    	 if(customersId==0){
+		    		 alert('please register first!');
+		    	  //鼠标自动定位到email框
+			 	 document.getElementById("email").focus(); 
+		    	 }else if(isPrizeAvailable){
+		    		 alert('You have already drawn,please check prize in account center or your mailbox!');
+		    	 }
 		     }
 	         
 	    	 });  
