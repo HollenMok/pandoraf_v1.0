@@ -20,8 +20,14 @@ class execute{
 	
 	}
 	public function display(){
-		
-		require ROOT.'/applications/pandoraf/index.php';
+		//distinguish background and application/区分后台与应用
+		if(strstr($_SERVER['HTTP_HOST'],'os')!=false){
+			// os.pandoraf.com
+			require ROOT.'/pf_admin/index.php';
+		}else{
+			//www.pandoraf.com
+			require ROOT.'/applications/pandoraf/index.php';
+		}		
 	}
 		
 }
