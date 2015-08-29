@@ -86,7 +86,15 @@ $(document).ready(function(){
 		            easing: $.easing.easeOutSine, 
 		            //回调函数 
 		            callback: function(){
-		            alert("congratulation,prize"+p+" !");        
+		            alert("congratulation,prize"+p+" !");  
+		            $.ajax({
+                    	type:'post',
+                    	url:'index.php?com=lucky&t=getNewRegistrant',
+                    	dataType:'html',
+                    	success:function(res){
+                    	 $('.luckyList').html(res);
+                    	}	
+                    });
 		            } 
 		        }); 
 			}

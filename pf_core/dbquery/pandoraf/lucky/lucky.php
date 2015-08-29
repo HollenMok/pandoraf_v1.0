@@ -17,10 +17,11 @@ class luckyDbqueryLucky{
 		
 	}
 	public function getNewRegistrant(){
-		 $sql = 'select * from lucky_registrant where lucky_id=2';
-		 $this->dbInstance->dbQuery($sql);
-		 $row = $this->dbInstance->getRow();
-		 return $row;
+		$sql = 'select c.customers_email_address,lp.prize_name from lucky_registrant as lr left join customers as c on lr.customers_id=c.customers_id'.'
+				left join lucky_prize as lp on lp.prize_id=lr.prize_id order by lr.lucky_id ASC ';
+		$this->dbInstance->dbQuery($sql);
+		$result = $this->dbInstance->getAll();
+		return array_slice($result,-10,10);
 	}
 	public function register($email, $pwd, $params){
 		$ip = $params['ip'];
@@ -78,6 +79,7 @@ class luckyDbqueryLucky{
 		$sql = 'update lucky_registrant set prize_available=1  where customers_id ='."'$customers_id'";
 		$this->dbInstance->dbQuery($sql);
 	}
+
 }
 
 

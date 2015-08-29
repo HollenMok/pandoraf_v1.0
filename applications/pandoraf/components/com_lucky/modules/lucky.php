@@ -132,6 +132,13 @@ class LuckyModuleLucky{
 	 * @date 2015/08/15
 	 */
 	public function getNewRegistrant(){ 
+	  $registrant =  $this->luckyQuery->getNewRegistrant();
+	  for($i=count($registrant)-1;$i>=0;$i--){
+	  	//shield customers_email_address with *
+	  	$shield_name = explode('@',$registrant[$i][customers_email_address]);
+	  	$shiled_name[0] = substr_replace($shield_name[0],str_repeat('*',strlen($shield_name[0])-6),strlen($shield_name[0])/1.5);
+	  	$result['registrants'] =$result['registrants'] ."<li> Dear ".$shiled_name[0]."@".$shield_name[1]." get a ".$registrant[$i][prize_name]."</li>";
+	  }
 	  $session = pFactory::sessionInstance();
 	  $result['customers_id'] = $_SESSION['customers_id'];
 	  if(!$result['customers_id']){
@@ -189,4 +196,5 @@ class LuckyModuleLucky{
 		  $this->luckyQuery->setPrizeAvailable($customers_id);
 		}
 	}
+	
 }
