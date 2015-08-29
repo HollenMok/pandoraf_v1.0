@@ -63,6 +63,9 @@ class LuckyModuleLucky{
 		$proSum = array_sum($proArr);
 		//概率数组循环
 		foreach ($proArr as $key => $proCur) {
+			
+			
+			   
 			//生成随机事件，根据概率区域大小来调整随机事件结果
 			$randNum = mt_rand(1, $proSum);
 			if ($randNum <= $proCur) {
@@ -82,12 +85,45 @@ class LuckyModuleLucky{
 		//验证邮箱是否存在/check email existence
         $isEmailExist = $this->luckyQuery->isEmailExist($email);
         if(!$isEmailExist){
-        	$result = $this->luckyQuery->register($email,$pwd);
+        	$params['date'] = time();
+        	$params['ip'] = $this->getIP();
+        	$result = $this->luckyQuery->register($email,$pwd,$params);
         }
 		$session = pFactory::sessionInstance();
 		$_SESSION['customers_id'] = $result;
 		return $result;
 	}
+    /*
+     * @desc get visitor ip/ 获取访问者ip
+     * @author HollenMok
+     * @date 2015/08/29
+     */
+	public function getIP(){
+		if (isset($_SERVER)) {
+			if (isset($_SERVER['HTTP_TRUE_CLIENT_IP'])){
+				$ip = $_SERVER['HTTP_TRUE_CLIENT_IP'];
+			}
+			elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			} elseif (isset($_SERVER['HTTP_CLIENT_IP'])) {
+				$ip = $_SERVER['HTTP_CLIENT_IP'];
+			} else {
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		} else {
+			if (getenv('HTTP_TRUE_CLIENT_IP')) {
+				$ip = getenv('HTTP_TRUE_CLIENT_IP');
+			} elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+				$ip = getenv('HTTP_X_FORWARDED_FOR');
+			} elseif (getenv('HTTP_CLIENT_IP')) {
+				$ip = getenv('HTTP_CLIENT_IP');
+			} else {
+				$ip = getenv('REMOTE_ADDR');
+			}
+		}
+		return $ip;
+	}
+	
 	/*
 	 * @desc 更新抽奖界面客户列表/update new register list 
 	 * @author HollenMok

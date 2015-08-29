@@ -22,14 +22,20 @@ class luckyDbqueryLucky{
 		 $row = $this->dbInstance->getRow();
 		 return $row;
 	}
-	public function register($email, $pwd){
-		$sql = 'insert into customers (customers_email_address,customers_password)values('."'$email'".','."'$pwd'".')';
+	public function register($email, $pwd, $params){
+		$ip = $params['ip'];
+		$sql = 'insert into customers (customers_email_address,customers_password,customers_ip_address)values('."'$email'".','."'$pwd'".','."'$ip'".')';
+		$this->dbInstance->dbQuery($sql);
+		$date = $params['date'];
+		$sql = 'insert into register_email (customers_email_address,add_date)values('."'$email'".','."'$date'".')';
 		$this->dbInstance->dbQuery($sql);
 		$sql = 'select * from customers order by customers_id desc limit 1';
 		$this->dbInstance->dbQuery($sql);
 		$col = $this->dbInstance->getCol();
 		return $col;
 	}
+	
+	
 	/*
 	 * @desc get rate of every prize
 	 * @author HollenMok
