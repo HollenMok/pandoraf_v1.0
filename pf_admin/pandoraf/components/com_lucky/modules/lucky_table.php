@@ -8,15 +8,13 @@
 * @date 2015/08/29
 *
 */
-class LuckyModuleLucky_table{
+require ROOT.'/pf_admin/pandoraf/models/mod_table/table.php';
+class LuckyModuleLucky_table extends modTable{
 	public function __construct(){
 		
 	}
 	public function display(){
-		//Smarty engine/Smarty 引擎
-		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
-		$smarty = new Smarty();
-		$smarty->display('web/table.html');exit;
+		parent::display();
 	}
 	
 }

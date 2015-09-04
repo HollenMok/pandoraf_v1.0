@@ -16,7 +16,7 @@ class LuckyController{
    	    $this->LuckyModuleLucky_table = new LuckyModuleLucky_table();
 	}
 	
-	public function display(){
+	public function display(){ 
 		//配置用户列表模型
 		$this->LuckyModuleLucky_table ->display();
 	}
