@@ -1,4 +1,47 @@
 {include file="web/libs/header.html"}
+<form id="table_form">
+<div class="element-box">
+	<div class="t">
+		<div class="t">
+			<div class="t"></div>
+		</div>
+	</div>
+<!--页面主体-->
+	<div class="m">
+		<table class="adminlist" id="adminlist" cellSpacing="1">
+        	<thead>
+            	<tr>
+					{foreach from=$table_fields item=item key=key}
+						{if $item.is_show}
+						<th {if $item.is_sort}sort_type="{$item.sort_type}" key="{$key}"{/if}>
+							{if $selectAll && $key eq $primaryKey}
+								<input type="checkbox" value="" class="selectAll" onclick="ModTable.selectAll(this);" />
+							{/if}
+							{$item.title}
+						</th>
+						{/if}
+					{/foreach}
+                </tr>
+            </thead>
+            <tbody>
+              {include file="web/libs/common_data.html"}	
+            </tbody>
+            
+            {if $openPage}
+				{include file="web/libs/page.html"}
+			{/if}
+        </table>
+		<div class="clr"></div>
+	</div>
+	<!--页面主体 End-->
+
+	<div class="b">
+		<div class="b">
+			<div class="b"></div>
+		</div>
+	</div>
+</div>
+</form>
 {include file="web/libs/footer.html"}
 
 

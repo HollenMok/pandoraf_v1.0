@@ -1,0 +1,59 @@
+<tfoot>
+    <tr>
+    <td colSpan="{$fieldCounts}">
+
+    <del class="container">
+
+        <div class="pagination" id="page_info">
+            <div class="limit"> Page Size#
+                <select class="inputbox search_options" size="1" name="page_size" onChange="ModTable.changePageSize(this);">
+                	{foreach from=$page_size_list item=size}
+						<option value="{$size}" {if $size eq $default_page_size} selected="selected"{/if}>{$size}</option>
+					{/foreach} 
+                </select>
+            </div>
+
+            <div class="goto">
+            <input type="text" name="goto" id="goto" style="width:21px;" value="" />
+            <input type="button" id="submit_goto" value="go" onClick="ModTable.goPage($('#goto').val(), true);" />
+            </div>
+
+            <div class="limit"><span id="show_page_total"></span>&nbsp;&nbsp;&nbsp;page: <span id="page_queue_now">{$page}</span> / <span id="page_queue_total">{$total_page}</span>&nbsp;&nbsp;Total Records:<span id="total_records">{$total_records}</span></div>
+
+            <div class="button2-left" style="width:81px"><div class="end">
+            <span class="has" >end_page</span>
+            </div></div>
+
+            <div class="button2-left" style="width:81px">
+            <div class="next">
+            <span class="has">next_page</span>
+            </div></div>
+
+
+            <div class="button2-left" style="width:0">
+                <div class="page" id="page_numbers">
+					
+                </div>
+            </div>
+
+
+             <div class="button2-right" style="width:81px">
+                 <div class="prev">
+                 <span class="off">prev_page</span>
+                 </div>
+             </div>
+
+            <div class="button2-right" style="width:52px">
+                <div class="start">
+                <span class="off">start</span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </del>
+    </td></tr>
+
+</tfoot>

@@ -1,0 +1,18 @@
+{if $data_list}
+{foreach from=$data_list item=item}
+	<tr>
+	{foreach from=$table_fields key=key item=field}
+		<td>
+			{if $selectAll && $key eq $primaryKey}
+				<input type="checkbox" value="{$item.$key}" class="selectAll" />
+			{/if}
+			{$item.$key}
+		</td>
+	{/foreach}
+	</tr>
+{/foreach}
+{else}
+	<tr><td colspan="{$fieldCounts}" style="text-align:center">
+		No data find...
+	</td></tr>
+{/if}
