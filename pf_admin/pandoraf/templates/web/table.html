@@ -12,14 +12,12 @@
         	<thead>
             	<tr>
 					{foreach from=$table_fields item=item key=key}
-						{if $item.is_show}
 						<th {if $item.is_sort}sort_type="{$item.sort_type}" key="{$key}"{/if}>
 							{if $selectAll && $key eq $primaryKey}
 								<input type="checkbox" value="" class="selectAll" onclick="ModTable.selectAll(this);" />
 							{/if}
-							{$item.title}
+							{$item.field}
 						</th>
-						{/if}
 					{/foreach}
                 </tr>
             </thead>
