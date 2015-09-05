@@ -1,15 +1,14 @@
 <?php
 /*
  * -----------------------------
- * entrance of product component 
- * 产品组件入口
+ * entrance of products component/产品管理组件入口程序
  * -----------------------------
  * @author HollenMok
- * @date 2015/08/16
+ * @date 2015/09/05
  * 
  */
 require 'controller.php';
-$controller = new ProductController();
+$controller = new ProductsController();
 if($task){
 	$controller->$task();
 }else{
