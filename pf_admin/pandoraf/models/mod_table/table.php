@@ -23,6 +23,11 @@ class modTable{
 		$table_fields =  $this->initSqlFields();
 		$smarty->assign('table_fields',$table_fields);
 		$data_list = $this->loadData();
+		foreach($data_list as $k =>$v){
+			if($data_list[$k]['products_image']){
+			$data_list[$k]['products_image'] = '<img width="50" height="50" src="http://pandoraf.com/applications/pandoraf/templates/imgServer/thumb/list_grid/'.$v['products_image'].'"/>';
+			}
+		}
 		$smarty->assign('data_list',$data_list);
 		if(0){
 		$contents = $smarty->fetch($this->data_tpl);
