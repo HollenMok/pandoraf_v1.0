@@ -1,0 +1,44 @@
+<ul id="ul_{$item.cart_id}" cart_id="{$item.cart_id}">
+	<li class="td_select">
+		<div class="checkbox">
+			<span warehouse="{$block.warehouse}" cart_id="{$item.cart_id}" class="cartItemCheckbox {if $item.active}{if $item.selected}check_on{else}check_un{/if}{else}check_off{/if}"></span>
+		</div>
+	</li>
+	<li class="td_product"> 
+		<a class="a_img" href="{$item.url}" title="{$item.products_name}"><img src="{$item.image_url}" width="100" height="100" alt="{$item.products_name}"></a> 
+		<a class="a_title" href="{$item.url}">{$item.products_name}({$item.products_model})</a>
+		{if $item.attributes}
+		<div class="td_filter">
+			<u warehouse="{$block.warehouse}" cart_id="{$item.cart_id}"></u>
+			<span>
+			{foreach from=$item.attributes item=attr name=attributesFor}
+				{if $smarty.foreach.attributesFor.index neq 0}<br />{/if}
+				{$attr.name}: {$attr.value}
+			{/foreach}
+			</span>
+		</div>
+		{/if}
+	</li>
+	<li class="td_opt"> 
+		<i class="removeItem"><a href="javascript:void(0);" cart_id="{$item.cart_id}" warehouse="{$block.warehouse}"></a></i> 
+		<i class="{if $item.wishlist}wish{else}add_wish{/if}"><a href="javascript:void(0);" products_id="{$item.products_id}" title="{$LC_ADD_TO_WISH}"></a></i> 
+		<i class="save_later" cart_id="{$item.cart_id}" onclick="saveForLater(this);"><a href="javascript:void(0);" title="{$LS_CART_SAVE_FOR_LATER}"></a></i> 
+	</li>
+	<li class="td_quantity"> 
+		<div class="quantity_box">
+			<span class="prev {if $item.quantity eq 1}gray{/if}"></span>
+			<input id="qty" type="text" autocomplete="off" maximum="{$item.maximum}" clearStock="{$item.clearStock}" name="qty" oldqty="{$item.quantity}" value="{$item.quantity}" cart_id="{$item.cart_id}" warehouse="{$block.warehouse}">
+			<span class="next"></span>
+			<s id="maximum" str="{$LC_MAXIMUM}" {if $item.clearStock eq 0}style="display:none;"{/if}>{$LC_MAXIMUM}xxx: {$item.maximum}</s>
+		</div>
+	</li>
+	<li class="td_price">
+		<span class="price" oriprice="{$item.price}">{$item.format_final_price}</span>
+		{if $item.products_price > $item.price}
+		<span class="price_old" oriprice="{$item.products_price}">{$item.format_products_price}</span>
+		{/if}
+	</li>
+	<li class="td_subtotal"> 
+		<span class="price" oriprice="{$item.total_price}">{$item.format_total_price}</span>
+	</li>
+</ul>

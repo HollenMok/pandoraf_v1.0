@@ -1,0 +1,25 @@
+<div class="left">
+	<div class="inputbox telephone {if !$showPhoneNumber}hidden{/if}">
+		<span>{$LS_TELPHONE}</span>
+		<input type="text" value=" " name="orderphone" id="orderphone"/>
+		<span class="error hidden">requiered</span>
+	</div>
+	<div class="title">chose discount:</div>
+	<div class="coupon_tool">
+		<div class="inputbox">
+			<span class="tips">input coupon</span>
+			<input name="coupon"  msg="" autocomplete="off" value="" id="use_coupon"/>
+			<span class="error"></span>
+		</div>
+		<div class="submit">apply</div>
+	</div>
+	<div class="coupon_used">
+	{include file='web/display/shopcart/used_coupon.html'}
+	</div>
+	
+	<div class="payment_accept">
+		<i></i>
+		<span></span>
+		<b>we accept:</b>
+	</div>
+</div>

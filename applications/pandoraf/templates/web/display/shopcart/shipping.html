@@ -1,0 +1,22 @@
+<div class="shipping">
+	<div class="shipping_tool">
+		<div class="title">Your preferred shipping method:</div>
+		<div class="tools">
+			<strong>{$block.defaultShipName}<i></i></strong>
+			<div class="box">
+				<ul>
+				{foreach from=$block.shipmentList item=shipment key=key}
+					<li code="{$key}" warehouse="{$block.warehouse}" onclick="$.changeShipment(this);">{$shipment}</li>
+				{/foreach}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="shipping_price">
+		<ul>
+			<li>{$LS_ITEM_TOTAL} <b oriprice="{$block.itemTotalAmount}" class="price">{$block.formatItemTotalAmount}</b></li>
+			<li>{$LS_ITEM_SHIPPING} <b oriprice="{$block.totalShipCost}" class="price">{$block.formatShipCost}</b></li>
+			<li>{$LS_TOTAL}: <span oriprice="{$block.orderTotal}" class="price">{$block.formatOrderTotal}</span></li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="right">
+	<div class="subtotal_box"> 
+		<ul>
+			<li>{$LS_ORDER_SUBTOTAL} :<span class="price" oriprice="{$usSubtotal}" id="checkout_subtotal">{$subtotal}</span></li>
+			<li>{$LS_SHIPPING_FEE}<span class="price" oriprice="{$totalShipCost}" id="checkout_shiptotal">{$shiptotal}</span></li>
+			{if $discountList}
+			    {foreach from=$discountList item=discount}
+				<li class="discountTr">{$discount.name}:<span class="price" oriprice="{$discount.discount}">{$discount.format_discount}</span></li>
+				{/foreach}
+			{/if}
+			<li class="grandtotal">Grand Total:<span class="price" oriprice="{$usGrandtotal}" id="checkout_grandtotal">{$grandtotal}</span></li>
+		</ul>
+	</div>
+	<div class="payment_btn_paypal">
+		<ul>
+			<li class="paypal_btn">
+			<form id="checkoutSubmitForm" method="post" action="/index.php">
+			<input type="hidden" value="shopcart" name="com">
+			<input type="hidden" value="checkoutSubmit" name="t" id="formTask">
+			<input type="hidden" value="paypal" name="payCode">
+			<input type="hidden" value="{$showPhoneNumber}" id="needPhone">
+			<input type="hidden" value="{$addressPhone}" id="phone" name="phone">
+			<input type="hidden" value="1" id="usePPaddress" name="usePPaddress">
+			<a href="javascript:void(0);" id="paypalForm">Checkout with<span></span></a></li>
+			</form>
+			<li>Or</li>
+			<li class="checkout_btn proceedCheckout"><span>Proceed to checkout</span></li>
+		</ul>
+		<input type="hidden" value="{$FbProduct}"  id="FbProduct"/>
+		<input type="hidden" value="{$FbCurrency}" id="FbCurrency"  />
+	</div>
+</div>
