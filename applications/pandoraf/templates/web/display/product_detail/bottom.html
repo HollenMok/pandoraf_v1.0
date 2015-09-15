@@ -115,6 +115,51 @@ $.fn.HoverDelay = function(params) {
 		
 	});
 })(jQuery);
+ function addToCart(){
+	 var qty = $("#qty").val();
+	 var products_id = '962452';
+	 var warehouse = 'CN';
+	 var attrs = new Array();
+	 attrs[379] = '16344';
+	 attrs[380] = '16234';
+	 $.ajax({
+		 type:'post',
+		 url:'/index.php?com=shopcart&t=addProduct',	 
+		 data:{
+			 'qty':qty,
+			 'products_id':products_id,
+			 'warehouse':warehouse,
+			 'attrs[379]': attrs[379],
+			 'attrs[380]': attrs[380]
+		  },
+		 success:function(res){
+			 alert(res);
+		 }
+	 });
+ }
 
 </script>
 {/literal}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
