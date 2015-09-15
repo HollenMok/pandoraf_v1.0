@@ -17,10 +17,14 @@
 class config{
 	public $connection = array(
 			'pf'=>array(
-			    'host'=>'localhost',
-			    'db' => 'pf',	
-			    'user' =>'root',
-				'pwd' =>'XXXXX'
+			    //'host'=>'localhost',
+			    //'db' => 'pf',	
+			   // 'user' =>'root',
+				//'pwd' =>'XXXXX'
+					'host'=>'192.168.6.239',
+					'db' => 'newchic',
+					 'user' =>'root',
+					'pwd' =>'bg43491616'
 			 ));
 	         
 	public function __construct(){

@@ -11,7 +11,9 @@
 class shopcartModuleShopcart{
 	
 	public function __construct(){
-		
+		require ROOT.'/pf_core/factory.php';
+		require ROOT.'/pf_core/dbquery/pandoraf/shopcart/shopcart.php';
+		$this->shopcartQuery = new shopcartDbqueryShopcart();
 	}
 	
 	public function display(){
@@ -22,7 +24,8 @@ class shopcartModuleShopcart{
 		$warehouse = $_POST['warehouse'];
 		$attrs = $_POST['attrs'];
 		$products_id = $_POST['products_id'];
-		return $warehouse;
+		$result = $this->shopcartQuery->addToCart($qty,$warehouse,$attrs,$products_id);
+		return $result;
 	}
 	
 }
