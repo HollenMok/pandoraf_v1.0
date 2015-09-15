@@ -1,5 +1,5 @@
 /* pandoraf.com @2015_v1.0*/
-    html{ height:100%;}
+html{ height:100%;}
 	body{ height:100%;padding:0;margin:0;line-height:1; font-size:12px; -webkit-text-size-adjust:none; color:#333333; background:#ffffff;}
 	body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p {padding:0; margin:0; font-weight: normal; outline:none; font-family:Arial,Helvetica,sans-serif;}
 	th{ text-align:left;}
@@ -11,12 +11,11 @@
 	table { border-collapse:collapse;border-spacing:0;}
 	a{text-decoration:none; color:#333; outline:none;}
 	a:hover{color:#e33057; text-decoration:underline;}
-.wrap{ width:1200px; margin:0 auto;}
-.inhere{ height:36px; line-height:36px; font-size:14px; padding-top:5px; overflow:hidden;}
-.inhere ul li{ float:left; font-size:14px; padding-right:6px;}
-.inhere ul li h1{ font-size:16px; font-weight:bold;}
-.color{ font-size:16px; color:#666666; line-height:2.4;}
-.foot{ position:fixed; bottom:0; left:0; width:100%;}
+	
+	.wrap{ width:1200px; margin:0 auto;}
+	.inhere{ height:36px; line-height:36px; font-size:14px; padding-top:5px; overflow:hidden;}
+	.inhere ul li{ float:left; font-size:14px; padding-right:6px;}
+	.inhere ul li h1{ font-size:16px; font-weight:bold;}
 
 /* Lucky_Draw */
 	.wrap1{ width:1000px; margin:0 auto; overflow:hidden;}
@@ -76,7 +75,7 @@
 	.form_submit.formsubmitgray:hover{ background:#e8e8e8 url() no-repeat center center;}
 	
 /*head navigation*/	
-.head{ height:36px; line-height:36px; border-bottom:1px #000000 solid;}
+    .head{ height:36px; line-height:36px; border-bottom:1px #000000 solid;}
 	.head .wrap{ position:relative; z-index:100;}
 	.head .head_right{ position:absolute; right:0; top:0;}
 	
@@ -867,6 +866,17 @@
 	.foot .join.luncky_join{ width:380px;}
 	.foot .newsletter.luncky_newsletter{ width:300px; text-decoration:underline;}
 	.foot .foot_3.luncky_footer{ width:1000px;}
+	
+    .wrap_right{ width:960px; float:right;}
+	.wrap_left{ width:220px; float:left; padding-bottom:30px;}
+	.wrap_left .category dl{ padding-top:5px; display:block;}
+	.wrap_left .category dl dt{height:30px; line-height:30px; font-size:14px; color:#333333; font-weight:bold; border-bottom:1px #dedede solid;}
+	.wrap_left .category dl ul{ padding:5px 0 0 4px; overflow:hidden;}
+	.wrap_left .category dl ul li{ color:#666666; line-height:14px; padding-top:5px; padding-bottom:5px; display:block; min-width:93px; padding-left:15px;float:left; position:relative;}
+	.wrap_left .category dl ul li i{background:url(../images/sprite_home.png) no-repeat -50px -42px; width:10px; height:10px;overflow:hidden;position:absolute; left:0; top:7px;}
+	.wrap_left .category dl ul li.active i{ background-position:-50px -52px;}
+	.wrap_left .category dl ul li.active a{ color:#e33057;}
+	.wrap_left .category dl ul li a:hover{ text-decoration:none;}
 	
 @media (max-width:1200px) {
 	.wrap{ padding:0 10px;}
