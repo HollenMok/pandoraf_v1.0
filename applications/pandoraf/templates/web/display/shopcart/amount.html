@@ -1,11 +1,11 @@
 <div class="right">
 	<div class="subtotal_box"> 
 		<ul>
-			<li>{$LS_ORDER_SUBTOTAL} :<span class="price" oriprice="{$usSubtotal}" id="checkout_subtotal">{$subtotal}</span></li>
-			<li>{$LS_SHIPPING_FEE}<span class="price" oriprice="{$totalShipCost}" id="checkout_shiptotal">{$shiptotal}</span></li>
+			<li>{$LS_ORDER_SUBTOTAL}Subtotal:<span class="price" oriprice="{$usSubtotal}" id="checkout_subtotal">{$subtotal}</span></li>
+			<li>{$LS_SHIPPING_FEE}Shipping Fee:<span class="price" oriprice="{$totalShipCost}" id="checkout_shiptotal">{$shiptotal}</span></li>
 			{if $discountList}
 			    {foreach from=$discountList item=discount}
-				<li class="discountTr">{$discount.name}:<span class="price" oriprice="{$discount.discount}">{$discount.format_discount}</span></li>
+				<li class="discountTr">{$discount.name}Cash Reduction:<span class="price" oriprice="{$discount.discount}">{$discount.format_discount}</span></li>
 				{/foreach}
 			{/if}
 			<li class="grandtotal">Grand Total:<span class="price" oriprice="{$usGrandtotal}" id="checkout_grandtotal">{$grandtotal}</span></li>

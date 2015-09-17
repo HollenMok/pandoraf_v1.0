@@ -25,6 +25,12 @@ class ShopcartController{
 		$smarty->assign('blockList',$blockList);
 		$countryList = $this->shopcartModuleShopcart->getCountry();
 		$smarty->assign('countryList',$countryList);
+		$subtotal = 'US$10.09';
+		$shiptotal = 'US$1.30';
+		$grandtotal = 'US$11.39';
+		$smarty->assign('subtotal',$subtotal);
+		$smarty->assign('shiptotal',$shiptotal);
+		$smarty->assign('grandtotal',$grandtotal);
 		$smarty->display('web/display/shopcart.html');exit;
 	}
 	public function cartInfo(){
