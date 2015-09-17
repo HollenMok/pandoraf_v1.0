@@ -16,6 +16,8 @@
 	<div class="dt_subtotal">subtotal</div>
 	</dt>
   <dd>
+    {foreach from=$area.productList item=item}
 	{include file="web/display/shopcart/item_ul.html"}
+	{/foreach}
 	</dd>
 </dl>

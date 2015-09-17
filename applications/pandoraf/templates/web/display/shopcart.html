@@ -11,10 +11,14 @@
       </div>
       {include file="web/display/shopcart/shipcountry.html"}
       <div class="cart_box">
+            {foreach from=$blockList item=block}
             <div class="cart_main" id=" ">
+               {foreach from=$block.areaList item=area}
                   {include file="web/display/shopcart/item.html"}
 				  {include file="web/display/shopcart/shipping.html"}
+			   {/foreach}  
             </div> 
+            {/foreach}
             {include file="web/display/shopcart/option.html"}
       </div>
 </div>
