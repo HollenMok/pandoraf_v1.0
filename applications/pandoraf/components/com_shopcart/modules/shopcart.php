@@ -98,16 +98,16 @@ class shopcartModuleShopcart{
 		
 		$blockList['619']['selected'] = '1';
 		$blockList['619']['active'] = '1';
-		$blockList['619']['shipmentListOrder'] = '1';
-		$blockList['619']['defaultShip'] = '1';
-		$blockList['619']['defaultShipName'] = '1';
-		$blockList['619']['totalShipCost'] = '1';
-		$blockList['619']['formatShipCost'] = '1';
+		$blockList['619']['shipmentListOrder'] = 'hkairmail_hkairmail,airmail_airmail,pam_pam,cndhl_cndhl,chinapost_chinapost';
+		$blockList['619']['defaultShip'] = 'hkairmail_hkairmail';
+		$blockList['619']['defaultShipName'] = 'Standard Shipping (Free shipping & 7-20 business days)';
+		$blockList['619']['totalShipCost'] = '0';
+		$blockList['619']['formatShipCost'] = 'US$0.00';
 		$blockList['619']['itemTotal'] = '1';
-		$blockList['619']['itemTotalAmount'] = '1';
-		$blockList['619']['formatItemTotalAmount'] = '1';
-		$blockList['619']['orderTotal'] = '1';
-		$blockList['619']['formatOrderTotal'] = '1';
+		$blockList['619']['itemTotalAmount'] = '10.09';
+		$blockList['619']['formatItemTotalAmount'] = 'US$10.09';
+		$blockList['619']['orderTotal'] = '10.09';
+		$blockList['619']['formatOrderTotal'] = 'US$10.09';
 		
 		if($_GET['pf']){
 			echo "<pre>";print_r($blockList); exit; 
