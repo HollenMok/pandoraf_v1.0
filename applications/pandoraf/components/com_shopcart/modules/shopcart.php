@@ -17,7 +17,8 @@ class shopcartModuleShopcart{
 	}
 	
 	public function display(){
-		
+		$itemImage['image_url'] = '/applications/pandoraf/templates/imgServer/p962452/medium/SKU189442 (15).jpg';
+		return $itemImage;
 	}
 	public function addProduct(){
 		$qty = $_POST['qty'];

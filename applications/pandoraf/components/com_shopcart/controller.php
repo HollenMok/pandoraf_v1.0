@@ -19,6 +19,8 @@ class ShopcartController{
 		//Smarty engine/Smarty 引擎
 		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
 		$smarty = new Smarty();
+		$itemImage = $this->shopcartModuleShopcart->display();
+		$smarty->assign('itemImage',$itemImage);
 		$smarty->display('web/display/shopcart.html');exit;
 	}
 	public function addProduct(){
