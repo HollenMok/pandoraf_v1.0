@@ -23,6 +23,8 @@ class ShopcartController{
 		$smarty->assign('itemImage',$itemImage);
 		$blockList = $this->shopcartModuleShopcart->cartInfo();
 		$smarty->assign('blockList',$blockList);
+		$countryList = $this->shopcartModuleShopcart->getCountry();
+		$smarty->assign('countryList',$countryList);
 		$smarty->display('web/display/shopcart.html');exit;
 	}
 	public function cartInfo(){

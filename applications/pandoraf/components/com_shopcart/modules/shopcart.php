@@ -9,7 +9,7 @@
 *
 */
 class shopcartModuleShopcart{
-	
+	public $shopcartQuery;
 	public function __construct(){
 		require ROOT.'/pf_core/factory.php';
 		require ROOT.'/pf_core/dbquery/pandoraf/shopcart/shopcart.php';
@@ -39,38 +39,50 @@ class shopcartModuleShopcart{
 		$productList['categories_name'] = 'Plus Size Dresses';
 		
 		$productList['categories_seo_url'] = 'Plus Size Dresses';
-		$productList['reviewAmount'] = '962452';
-		$productList['diggs'] = '962452';
-		$productList['products_bulk'] = '962452';
-		$productList['show_size'] = '962452';
+		$productList['reviewAmount']['amount'] = '0';
+		$productList['reviewAmount']['score'] = '0';
+		$productList['reviewAmount']['average'] = '0';
+		$productList['reviewAmount']['start1'] = '0';
+		$productList['reviewAmount']['start2'] = '0';
+		$productList['reviewAmount']['start3'] = '0';
+		$productList['reviewAmount']['start4'] = '0';
+		$productList['reviewAmount']['start5'] = '0';
+		$productList['reviewAmount']['averagePercent'] = '962452';
+		$productList['diggs'] = '0';
+		$productList['products_bulk'] = '0';
+		$productList['show_size'] = '0';
 		$productList['image_url'] = ' http://pandoraf.com/thumb/list_grid//upload/2015/08/SKU189442 (8).jpg';
-		$productList['url'] = '962452';
-		$productList['review_url'] = '962452';
-		$productList['category_url'] = '962452';
-		$productList['wishlist'] = '962452';
+		$productList['url'] = 'http://pandoraf.com/plus-size-dresses-3660/p-962452.html';
+		$productList['review_url'] = 'http://pandoraf.com/sexy-plus-size-v-neck-short-sleeve-lace-hollow-out-dress-reviews-p962452.html';
+		$productList['category_url'] = 'http://pandoraf.com/plus-size-dresses-3660/';
+		$productList['wishlist'] = '0';
 		
-		$productList['image_cover'] = '962452';
-		$productList['askquestion_url'] = '962452';
-		$productList['questions_url'] = '962452';
-		$productList['shareImage_url'] = '962452';
-		$productList['warehouse'] = '962452';
-		$productList['quantity'] = '962452';
-		$productList['maximum'] = '962452';
-		$productList['clearStock'] = '962452';
-		$productList['price_discount'] = '962452';
+		$productList['image_cover'] = 'http://pandoraf.com/thumb/list_grid/upload/2015/08/SKU189442_2.jpg';
+		$productList['askquestion_url'] = 'http://pandoraf.com/plus-size-dresses-3660/p-962452/ask.html';
+		$productList['questions_url'] = 'http://pandoraf.com/plus-size-dresses-3660/p-962452/questions.html';
+		$productList['shareImage_url'] = ' http://pandoraf.com/plus-size-dresses-3660/p-962452/image.html';
+		$productList['warehouse'] = 'HJ';
+		$productList['quantity'] = '1';
+		$productList['maximum'] = '75';
+		$productList['clearStock'] = '1';
+		$productList['price_discount'] = 'US$0.00';
 		$productList['format_products_price'] = 'US$10.09';
 		
-		$productList['price'] = '962452';
+		$productList['price'] = '10.09';
 		$productList['format_final_price'] = 'US$10.09';
 		$productList['format_total_price'] = 'US$10.09';
-		$productList['attributes'] = '962452';
-		$productList['qty'] = '962452';
-		$productList['cart_id'] = '962452';
-		$productList['active'] = '962452';
-		$productList['selected'] = '962452';
-		$productList['attrs'] = '962452';
-		$productList['weight'] = '962452';
-		$productList['acce_main'] = '962452';
+		$productList['attributes']['0']['name'] = 'Color';
+		$productList['attributes']['0']['value'] = 'Dark Blue';
+		$productList['attributes']['1']['name'] = 'Size';
+		$productList['attributes']['1']['value'] = 'M';
+		$productList['qty'] = '1';
+		$productList['cart_id'] = '962452_379-16344_380-16218';
+		$productList['active'] = '1';
+		$productList['selected'] = '1';
+		$productList['attrs']['379'] = '16344';
+		$productList['attrs']['380'] = '16218';
+		$productList['weight'] = '0.145';
+		$productList['acce_main'] = '0';
 		
 		
 		$blockList = array();
@@ -97,9 +109,18 @@ class shopcartModuleShopcart{
 		$blockList['619']['orderTotal'] = '1';
 		$blockList['619']['formatOrderTotal'] = '1';
 		
-		
+		if($_GET['pf']){
+			echo "<pre>";print_r($blockList); exit; 
+		}
 		
 		return $blockList; 
+	}
+	public function getCountry(){
+	    $countryList = $this->shopcartQuery->getCountry();
+	    if($_GET['pfCountry']){
+	    	echo "<pre>";print_r($countryList); exit; 
+	    }
+	    return $countryList;
 	}
 	public function addProduct(){
 		$qty = $_POST['qty'];
