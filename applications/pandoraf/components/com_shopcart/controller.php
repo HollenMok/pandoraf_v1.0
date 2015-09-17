@@ -21,7 +21,12 @@ class ShopcartController{
 		$smarty = new Smarty();
 		$itemImage = $this->shopcartModuleShopcart->display();
 		$smarty->assign('itemImage',$itemImage);
+		$blockList = $this->shopcartModuleShopcart->cartInfo();
+		$smarty->assign('blockList',$blockList);
 		$smarty->display('web/display/shopcart.html');exit;
+	}
+	public function cartInfo(){
+		$this->shopcartModuleShopcart->cartInfo();
 	}
 	public function addProduct(){
 		$result = $this->shopcartModuleShopcart->addProduct();
