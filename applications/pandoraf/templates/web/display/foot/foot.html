@@ -64,8 +64,43 @@
 		  <i></i>
 	 </div>
 </div>
-
-
+{literal}
+<script type="text/javascript" >
+    //back to top 
+    toTop();
+	function toTop(){
+		var $window = $(window);
+		var $btn = $(".totop_btn");
+		var $app = $(".app_btn");
+		$window .scroll(function(){
+			if($window.scrollTop()>300){
+				$btn.slideDown(200);
+			}else{
+				$btn.slideUp(200);
+			}
+		});
+		$btn.click(function(){
+			$("html,body").animate({scrollTop:0});
+		});
+		$app.HoverDelay({
+			hoverDuring: 100,
+			outDuring: 100,
+			hoverEvent: function(obj){
+				return function(){
+					obj = $(obj);
+					obj.find("div").show();
+				}
+			},
+			outEvent: function(obj){
+				return function(){
+					obj = $(obj);
+					obj.find("div").hide();
+				}
+			}						
+		});
+	}
+</script>
+{/literal}
 
 
 
