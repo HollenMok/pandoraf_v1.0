@@ -134,20 +134,34 @@ html{ height:100%;}
 	.top .bag .box{position:absolute;top:80px; right:0;border:1px #000000 solid;background:#ffffff; padding:0 0 15px 15px; display:none;}
 	.top .bag .box i{ position:absolute;top:-5px; right:58px; display:block; width:10px; height:5px; background:url(../images/sprite_home.png) no-repeat -10px -81px;}
 	
-	.top .bag .box .bag_list{ padding-right:15px;}
-	.top .bag .box .bag_list_more{ overflow-y:scroll; max-height:440px; padding-right:15px;}
-	
-	.top .bag .box ul li{position:relative; width:180px; border-top:1px #cccccc solid; padding:15px 0 15px 80px; min-height:80px;}
+    .top .bag .box{}
+	.top .bag .box .bag_list_more{ overflow-y:scroll; max-height:348px;}
+	.top .bag .box ul{ padding:0 15px 0 15px;}
+	.top .bag .box ul li{position:relative; width:245px; border-top:1px #cccccc solid; padding:20px 0 13px 80px; min-height:80px; overflow:hidden;}
 	.top .bag .box ul li:first-child{ border:0;}
 	.top .bag .box ul li s{ position:absolute; left:0; top:0; margin-top:20px;}
 	.top .bag .box ul li s img{ width:72px; height:72px;}
-	.top .bag .box ul li p{ padding:0; margin:0;line-height:1.5; position:relative;}
+	.top .bag .box ul li p{ padding:0; margin:0;line-height:1.5; position:relative; overflow:hidden;}
 	.top .bag .box ul li p a{ display:block; line-height:15px; max-height:30px; overflow:hidden;}
-	.top .bag .box ul li .attr{ display:block; margin-top:5px;}
-	.top .bag .box ul li .price{ display:block; font-size:13px; font-weight:bold; margin-top:5px;}
+	.top .bag .box ul li .attr{ display:block; margin-top:6px; color:#888;}
+	.top .bag .box ul li .price{ font-size:13px; font-weight:bold; display:block;}
+	.top .bag .box ul li .old_price{ font-size:13px; color:#888; text-decoration:line-through;}
 	.top .bag .box ul li b{position:absolute; right:0; bottom:0; font-weight:normal; color:#666666; cursor:pointer;}
 	.top .bag .box ul li b:hover{ text-decoration:underline;}
-	.top .bag .box .submit{ overflow:hidden;}
+	.top .bag .box .submit{ position:relative; overflow:hidden; margin:0 auto; text-align:center; background:#efefef; padding:8px 0 18px 0;}
+	.top .bag .box .submit .subtotal{ line-height:2.2; font-size:16px;}
+	.top .bag .box .submit .subtotal b{ color:#e33057; font-weight:normal;}
+	.top .bag .box .submit u{ background:url(../images/sprite_home.png) no-repeat -94px -430px; position:absolute; width:32px; height:32px; bottom:0; right:0; cursor:pointer;}
+	
+	.top .bag .box ul li u{ background:url(../images/sprite_home.png) no-repeat -47px -139px; height: 16px; width: 13px; position:absolute; right:5px; bottom:5px; cursor:pointer;}
+	.top .bag .box .quantity_box{ float:right; overflow:hidden; position:relative; line-height:20px; margin-right:30px; margin-top:-15px;}
+	.top .bag .box .quantity_box input{width:40px; height:22px; text-align:center; background:#ffffff; border:1px #cccccc solid; display:block; margin:0 30px;ime-mode:disabled;}
+	.top .bag .box .quantity_box span{ width:24px; height:20px; background:url(../images/sprite_home.png) no-repeat -129px -290px; position:absolute; top:3px; right:0; cursor:pointer;-moz--moz-user-select:none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none; user-select: none; }
+	.top .bag .box .quantity_box .prev{ background-position:-95px -290px; right:auto; left:0;}
+	.top .bag .box .quantity_box .gray{opacity:0.5;filter:alpha(opacity=50); cursor:default;}
+	.top .bag .box p .maximum{ width:90px; color:#aaaaaa; white-space:nowrap; text-align:center; height:20px; border:dotted 1px #dddddd; padding:0 5px; position:absolute; top:35px; margin-right:30px; cursor:auto;}
+	.top .bag .box p .maximum.active{ background:#fffaee; border-color:#f6db84; color:#ff0000;}
+	.top .bag .box p .maximum:hover{ text-decoration:none;}
 	
 	.top .search{ float:right;padding-top:32px;}
 	.top .search .inputbox{ position:relative; float:left;}

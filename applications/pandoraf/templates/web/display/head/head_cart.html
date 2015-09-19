@@ -5,3 +5,50 @@
 	     <s></s>
 	</a>
 </div>
+<div class="box">
+   <li></li>
+   <ul class="bag_list {if $cartProducts|@count gt 3}bag_list_more{/if}">
+      {foreach from=$cartProducts item=item}
+      <li class="quantity_select">
+            <s><a href="{$item.url}">
+			    <img src="{$item.image_url}" />
+		    </a></s>
+		    <p>
+		           <a href="{$item.url}" title="{$item.products_name}">{$item.products_name|truncate:30:''}</a>
+					<span class="attr">
+						{foreach from=$item.attrList item=attr}
+							{$attr.options_name}: {$attr.value_name}<br />
+						{/foreach}
+					</span>
+					<span class="price" oriprice="{$item.final_price}" id="price_{$item.cart_id}">{$item.format_final_price}</span>
+					<span class="quantity_box">
+					<span class="prev {if $item.quantity eq 1}gray{/if}"></span>
+					<input type="text" warehouse="{$item.warehouse}" cart_id="{$item.cart_id}" value="{$item.quantity}" oldqty="{$item.quantity}" maximum="{$item.maximum}" name="qty" clearstock="{$item.clearStock}" autocomplete="off" id="qty" class="qty_{$item.cart_id}">
+					<span class="next"></span>
+					</span>
+					<b str="Maximum" class="maximum" id="maximum_{$item.cart_id}" {if $item.clearStock eq 0}style="display:none;"{/if}>Maximum: {$item.maximum}</b>
+					<u cart_id="{$item.ocart_id}" onclick="$.removeHeadCart(this);"></u>
+		    </p>
+      </li>
+      {/foreach}
+   </ul>
+   
+   	<div class="submit">
+	    <div class="subtotal">Subtotal: <b class="total_price" oriprice="{$format_final_productTotal}">{$productTotal}</b></div>
+		<a href="/index.php?com=shopcart"><span class="form_submit proceedCheckout">Continue Checkout</span></a>
+		<u onClick="close_bag();"></u>
+	</div>
+	{literal}
+	<script type="text/javascript">
+    function close_bag(){
+    	$(".top .bag .box").slideUp(200);
+    }
+	</script>
+	{/literal}
+</div>	
+	
+	
+	
+	
+	
+	

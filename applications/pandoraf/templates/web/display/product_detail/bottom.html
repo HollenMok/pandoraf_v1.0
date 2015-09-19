@@ -133,7 +133,14 @@ $.fn.HoverDelay = function(params) {
 			 'attrs[380]': attrs[380]
 		  },
 		 success:function(res){
-			 alert(res);
+			 $.ajax({
+				 type:'post',
+				 url:'/index.php?com=shopcart&t=miniCart',	 
+				 success:function(res){
+					 $('.top_right .bag').html(res);
+					 $(".top .bag .box").slideDown(200);
+				 }		 
+			 });
 		 }
 	 });
  }

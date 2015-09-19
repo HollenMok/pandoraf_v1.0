@@ -109,7 +109,31 @@ class shopcartModuleShopcart{
 		$result = $this->shopcartQuery->addToCart($qty,$warehouse,$attrs,$products_id);
 		return $result;
 	}
-	
+	public function miniCart(){
+		$cartProduct['count'] = "1"; 
+		$cartProduct['products']['962452{379}16344{380}16218']['ocart_id'] = "962452{379}16344{380}16218";
+		$cartProduct['products']['962452{379}16344{380}16218']['cart_id'] = "962452_379-16344_380-16218";
+		$cartProduct['products']['962452{379}16344{380}16218']['products_id'] = "962452";
+		$cartProduct['products']['962452{379}16344{380}16218']['url'] = "http://newchic.banggood.com/plus-size-dresses-3660/p-962452.html";
+		$cartProduct['products']['962452{379}16344{380}16218']['image_url'] = "http://img.newchic.com/thumb/list_grid//upload/2015/08/SKU189442 (8).jpg";
+		$cartProduct['products']['962452{379}16344{380}16218']['products_name'] = "Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress";
+		$cartProduct['products']['962452{379}16344{380}16218']['products_model'] = "SKU189442";
+		$cartProduct['products']['962452{379}16344{380}16218']['warehouse'] = "619";
+		$cartProduct['products']['962452{379}16344{380}16218']['maximum'] = "0";
+		$cartProduct['products']['962452{379}16344{380}16218']['clearStock'] = "0";
+		$cartProduct['products']['962452{379}16344{380}16218']['quantity'] = "1";
+		$cartProduct['products']['962452{379}16344{380}16218']['final_price'] = "10.09";
+		$cartProduct['products']['962452{379}16344{380}16218']['format_final_price'] = "US$10.09";
+		$cartProduct['products']['962452{379}16344{380}16218']['attrList']['0']['options_name'] = "Color";
+		$cartProduct['products']['962452{379}16344{380}16218']['attrList']['0']['value_name'] = "Dark Blue";
+		$cartProduct['products']['962452{379}16344{380}16218']['attrList']['1']['options_name'] = "Size";
+		$cartProduct['products']['962452{379}16344{380}16218']['attrList']['1']['value_name'] = "M";
+		
+		$cartProduct['showCheckout'] = "1";
+		$cartProduct['format_final_productTotal'] = "10.09";
+		$cartProduct['productTotal'] = "US$10.09";
+		return $cartProduct; 
+	}
 }
 
 
