@@ -1,0 +1,160 @@
+<div class="size_charts" id="size_charts">
+   <div class="title">size chart</div>
+   <ul class="charts">
+       <li class="active">women cloth</li>
+       {if $productInfo.showChart}<li>Size Conversion Chart</li>{/if}
+   </ul>
+   <div class="size_table">
+       <div class="main">
+           <ul class="charts unit_switcher">
+               <li class="active">inches</li>
+               <li>centimeters</li>
+           </ul>
+           <div class="charts_box">
+                <div>
+                    <table class="charts_hover">
+                          <tr>
+                             {foreach from=$productInfo.sizeHead item=item}
+                                <th>{$item}</th>
+                             {/foreach}
+                          </tr>
+                          {foreach from=$productInfo.sizeTable item=item}
+                              <tr>
+                                  {foreach from=$item item=val}
+                                     <td>{$val}</td>
+                                  {/foreach}
+                              </tr>
+                          {/foreach}
+                    </table>
+                </div>
+                <div style="display:none;">
+                     <table class="charts_hover">
+                           <tr>
+                               {foreach from=$productInfo.sizeHead item=item}
+                                   <th>{$item}</th>
+                               {/foreach}
+                           </tr>
+                           {foreach from=$productInfo.centimeters item=item}
+                             <tr>
+                                {foreach from=$item item=val}
+                                   <td>{$val}</td>
+                                {/foreach}
+                             </tr>
+                           {/foreach}
+                     </table>
+                </div>
+           </div>
+       </div>
+       <div style="display:none;">
+           <table class="charts_hover">
+                <tr>
+                    <th width="101">Our Size</th>
+					<th width="31">INT</th>
+					<th width="46">US/CA</th>
+					<th width="49">UK/AU</th>
+					<th width="21">EU</th>
+					<th width="21">FR</th>
+					<th width="23">RU</th>
+					<th width="24">IT</th>
+                </tr>
+                <tr>
+					<td>S(155/80A)</td>
+					<td>XXS</td>
+					<td>1</td>
+					<td>4</td>
+					<td>32</td>
+					<td>34</td>
+					<td>40</td>
+					<td>38</td>
+				</tr>
+				<tr>
+					<td>M(160/84A)</td>
+					<td>XS</td>
+					<td>2</td>
+					<td>6</td>
+					<td>34</td>
+					<td>36</td>
+					<td>42</td>
+					<td>40</td>
+				</tr>
+				<tr>
+					<td>L(165/88A)</td>
+					<td>S</td>
+					<td>4</td>
+					<td>8</td>
+					<td>36</td>
+					<td>38</td>
+					<td>44</td>
+					<td>42</td>
+				</tr>
+				<tr>
+					<td>XL(170/92A)</td>
+					<td>M</td>
+					<td>6</td>
+					<td>12</td>
+					<td>38</td>
+					<td>40</td>
+					<td>46</td>
+					<td>44</td>
+				</tr>
+				<tr>
+					<td>2XL(175/96A)</td>
+					<td>L</td>
+					<td>8</td>
+					<td>14</td>
+					<td>40</td>
+					<td>42</td>
+					<td>48</td>
+					<td>46</td>
+				</tr>
+				<tr>
+					<td>3XL(180/100A)</td>
+					<td>XL</td>
+					<td>10</td>
+					<td>16</td>
+					<td>42</td>
+					<td>44</td>
+					<td>50</td>
+					<td>48</td>
+				</tr>
+				<tr>
+					<td>4XL(185/104A)</td>
+					<td>2XL</td>
+					<td>12</td>
+					<td>18</td>
+					<td>44</td>
+					<td>46</td>
+					<td>52</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>5XL(190/108A)</td>
+					<td>3XL</td>
+					<td>14</td>
+					<td>20</td>
+					<td>46</td>
+					<td>48</td>
+					<td>54</td>
+					<td>52</td>
+				</tr>
+				<tr>
+				  <td>6XL(195/112A)</td>
+				  <td>4XL</td>
+				  <td>18</td>
+				  <td>22</td>
+				  <td>48</td>
+				  <td>50</td>
+				  <td>56</td>
+				  <td>54</td>
+			  </tr> 
+           </table>
+           
+       </div>
+   </div>
+</div>
+
+
+
+
+
+
