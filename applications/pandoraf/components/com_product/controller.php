@@ -9,15 +9,21 @@
 *
 */
 class ProductController{
-	
+	public $shopcartModuleShopcart;
+	public $smarty;
 	public function __construct(){
-	
+		//Smarty engine/Smarty 引擎
+		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
+		require 'modules/product.php';
+		$this->productModuleProduct =  new productModuleProduct();
 	}
 	
 	public function display(){
-		//Smarty engine/Smarty 引擎
-		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
-		$smarty = new Smarty();
-		$smarty->display('web/display/product_view.html');exit;
+		
+		$this->smarty = new Smarty();
+		$productInfo = $this->productModuleProduct->display();
+		$this->smarty->assign('productInfo',$productInfo);
+		$this->smarty->display('web/display/product_view.html');exit;
 	}
+
 }

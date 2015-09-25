@@ -5,6 +5,7 @@
 	     <s></s>
 	</a>
 </div>
+{if $cartProducts}
 <div class="box">
    <li></li>
    <ul class="bag_list {if $cartProducts|@count gt 3}bag_list_more{/if}">
@@ -46,7 +47,7 @@
 	</script>
 	{/literal}
 </div>	
-	
+{/if}
 	
 	
 	
