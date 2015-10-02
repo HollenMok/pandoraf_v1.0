@@ -18,20 +18,33 @@ class productModuleProduct{
 	public function display(){
 		$products_id = '962452';
 		$productInfo['description'] = $this->productQuery->getDescription($products_id);
-	     //$sizeData = $this->sizeAnalysis();
-		// echo "<pre>";print_r($sizeData); exit;
-
+	    $sizeData = $this->sizeAnalysis($productInfo['description']);
+	    $productInfo['sizeTable'] = $sizeData['inches'];
+	    $productInfo['sizeHead'] = $sizeData['sizeHead'];
+	    $productInfo['centimeters'] = $sizeData['centimeters'];
+	    $productInfo['sizeText'] = $sizeData['sizeText'];
+	    $productInfo['description'] = $this->splitDescription($productInfo['description']);
 		return $productInfo;
 	}
-	public function sizeAnalysis(){
+	public function splitDescription($description){
+		$pattern = '/<ul[\w\s\S<>]+ul>/';
+		preg_match($pattern,$description,$m);
+		return $m[0];
+	}
+	public function sizeAnalysis($description){
+		 
 		$pattern = '/<div id=\'specification\'>([^<]+)<\/div><div id=\'specification_end\'><\/div>/i';
 		$result = $sizeHead = $centimeters = array();
+		
 		if (preg_match($pattern, $description, $m)){
+			
 			$m[1] = str_ireplace('	','',$m[1]);
 			$data = json_decode(trim($m[1]));
-			$result = $data ? $data['data'] : $data;
+			$data = (array)$data;
+			$result = $data['data'];
+			
 			$sizeHead = (isset($data['title']) && $data['title']) ? $data['title'] : $this->getSizeChartHead('3608');
-
+			
 			foreach($result as $k=>$v){
 				foreach($v as $kk=>$vv){
 					$vv = trim($vv);
@@ -41,7 +54,7 @@ class productModuleProduct{
 					}
 				}
 			}
-
+			
 			foreach($result as $k=>$v){
 				foreach($v as $kk=>$vv){
 					$vv = trim($vv);
@@ -69,12 +82,13 @@ class productModuleProduct{
 					$centimeters[$k][$kk] = $matchStr.$newStr;
 				}
 			}
-			foreach($sizeHead as $k=>$v){
+			
+			foreach($sizeHead as $k=>$v){	
 				$v = strtoupper(str_replace(' ','_',$v));
-				$v = 'size_'.$v;
-				$sizeHead[$k] = $this->Lang->_($v);
+				$sizeHead[$k] = $v;
 			}
 			$sizeText = array();
+			
 			foreach($result as $data){
 				$sizeName = preg_replace('/\(.*\)/i','',$data[0]);
 				$sizeName = trim($sizeName);
@@ -87,12 +101,12 @@ class productModuleProduct{
 				}
 				$sizeText[$sizeName] = $sizeData;
 			}
-
+			
 			$sizeTable['sizeHead'] = $sizeHead;
 			$sizeTable['inches'] = $result;
 			$sizeTable['centimeters'] = $centimeters;
 			$sizeTable['sizeText'] = $sizeText;
-
+			
 			return $sizeTable;
 		}
 	}
