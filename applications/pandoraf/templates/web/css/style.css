@@ -935,3 +935,57 @@ html{ height:100%;}
 	.carouse_swipe_list .carouse_tab li.active i{ background:#ffffff; width:12px; height:12px; display:block; border-radius:100%; position:absolute; left:4px; top:4px;}
 	
 	 
+    .title_h2 { position:relative; height:60px;margin-top:30px;}
+	.title_h2 h3{ position:absolute; left:10px; top:10px; font-size:18px; background:#ffffff; padding:0 10px;}
+	.title_h2 s{ position:absolute; top:19px; left:0; width:100%; height:1px; display:block; background:#cccccc;}
+	.title_h2 b{ position:absolute; right:10px; top:12px;display:block;background:#ffffff;padding:0 10px; font-weight:normal;}
+	
+	.title_h3{ position:relative; height:43px; margin-top:30px;}
+	.title_h3 h3{ position:absolute; left:10px; top:9px; font-size:18px; background:#ffffff; padding:0 10px;}
+	.title_h3 s{ position:absolute; top:19px; left:0; width:100%; height:1px; display:block; background:#cccccc;}
+	
+	.hot_content{ width:1200px; overflow:hidden;}
+	.hot_content .hot_left{ width:580px; float:left;}
+	.hot_content .hot_left ul li{ margin-top:23px;}
+	.hot_content .hot_right{ width:580px; float:right;}
+	
+	.hot_title{ width:560px; padding-left:20px; height:40px; line-height:40px;font-size:22px;}
+	.hotsale{ width:580px; float:left;}
+	.hotsale .goodsbox li{ display:block; width:160px; margin:10px 16px 0 16px; float:left; height:245px;}
+	.hotsale .goodsbox .img img{ margin:0 auto; display:block; width:120px; height:167px; max-height:167px;}
+	
+	.foot_share{ width:1200px; overflow:hidden;}
+	.foot_share .title_h2{ position:relative; height:60px;margin-top:30px;}
+	.foot_share .title_h2 h3{ position:absolute; top:6px; font-size:22px; background:#ffffff; padding:0 10px; font-weight:normal;}
+	.foot_share .title_h2 h3 span{ color:#e33057;}
+	.foot_share .title_h2 s{ position:absolute; top:19px; left:0; width:100%; height:1px; display:block; background:#cccccc;}
+	.foot_share .share_box{ overflow:hidden;}
+	.foot_share .share_img{ float:left;}
+	.foot_share .share_img ul{ overflow:hidden;}
+	.foot_share .share_img li{ margin-right:9px; float:left;}
+	.foot_share .share_img li:last-child{ margin-right:0;}
+	.foot_share .share_img li img{ width:141px; height:188px; display:block;}
+	.foot_share .more{height:40px; padding-top:15px; font-size:14px;}
+
+    .goodsbox{ display:block;}
+	.goodsbox li{ display:block; width:182px; margin:0 29px;float:left; position:relative;}
+	.goodsbox .img{ display:block; position:relative; border:1px solid #fff; background:url(../images/loading_3.gif) no-repeat center center; transition:all 0.3s ease 0s;}
+	.goodsbox .img:hover{ box-shadow:2px 2px 3px rgba(0,0,0,0.1); border-color:#ddd;}	
+	.goodsbox .img img{ margin:0 auto; display:block; width:180px;}
+	.goodsbox .img i{ width:30px; height:43px; background:url(../images/sprite_home.png) no-repeat -95px -111px; display:block; position:absolute; top:0px; font-size:22px; right:0px; color:#FFF; text-align:center; padding-right:12px; padding-top:2px; font-family: Georgia,"Times New Roman",Times,serif;}
+	.goodsbox.new_arrival li{ height:265px;}
+	.goodsbox.new_arrival li .img{ height:180px;}
+	
+	.goodsbox .img:hover i{ right:0; top:0;}
+	.goodsbox .img a{ display:block; overflow:hidden;}
+	.goodsbox .title{ display:block;margin:10px 0 0 0; line-height:16px; max-height:35px; overflow:hidden; color:#666666;/*text-overflow:ellipsis; white-space:nowrap;*/}
+	.goodsbox .title a:hover{ text-decoration:none; color:#e33057;}
+	.goodsbox .title b{ color:#ff0000;}
+	.goodsbox .price{ display:block; font-size:14px; line-height:1.2;margin:5px 0 0 0; color:#000000;}
+	.goodsbox .price i{ font-size:12px; color:#bbbbbb; font-weight:normal; font-style:normal;}
+	.goodsbox .price_old{display:block;color:#bbbbbb; text-decoration:line-through; margin:5px 0 0 0;}
+	.goodsbox .like{ position:absolute; right:10px; line-height:16px; display:block; padding-top:7px;}
+	.goodsbox .like i{ width:18px; height:16px; background:url(../images/sprite_home.png) no-repeat -46px -93px; display:block; position:absolute; top:7px; left:-20px;}
+	.goodsbox .like i.active{ background-position:-190px -28px;}
+	.goodsbox .like a{ text-decoration:none; cursor:pointer;}
+	
