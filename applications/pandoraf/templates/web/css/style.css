@@ -899,3 +899,39 @@ html{ height:100%;}
 	.head .head_right{ right:10px;}
 	.touch_close{ visibility:visible;}
 }
+
+    .carouse_swipe{position:relative;  width:1200px; margin-top:10px; -moz-user-select:none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none; user-select: none; }
+	.carouse_swipe .carouse_swipe_box{ width:1200px; height:430px;position:relative;overflow:hidden; margin:0 auto;}
+	.carouse_swipe .carouse_swipe_box ul{position:relative;}
+	.carouse_swipe .carouse_swipe_box li{float:left; width:100%; position:relative; overflow:hidden; height:none;}
+	.carouse_swipe .carouse_swipe_box li img{ width:1200px;height:430px; vertical-align:top;}
+	.carouse_swipe .carouse_btn li{position:absolute; top:50%; left:0; width:45px; height:90px; margin-top:-45px; overflow:hidden; cursor:default; background:#000000;opacity:0.2;filter:alpha(opacity:20);border-radius:0 45px 45px 0; box-shadow:0 0 20px rgba(0,0,0,0.2);transition: all 0.3s ease 0s;}
+	.carouse_swipe .carouse_btn li i{ width:15px; height:53px; display:block;background:url(../images/sprite_home.png) no-repeat -334px -289px; margin:18px 0 0 12px;}
+	.carouse_swipe .carouse_btn li.next{ left:auto; right:0; border-radius:45px 0 0 45px;}
+	.carouse_swipe .carouse_btn li.next i{ background-position:-390px -289px;margin:18px 12px 0 auto;}
+	.carouse_swipe .carouse_btn li.onhover{ display:none;}
+	.carouse_swipe:hover .carouse_btn li.onhover{ display:block;}
+	.carouse_swipe .carouse_btn li.onhover:hover{ opacity:0.6;filter:alpha(opacity:60); cursor:pointer;}
+	.carouse_swipe .carouse_tab{ position:absolute; bottom:15px; text-align:center; width:100%;}
+	.carouse_swipe .carouse_tab li{ width:13px; height:13px; border-radius:50%; display:inline-block; position:relative; overflow:hidden; margin:0 2px; cursor:pointer; background:#888;}
+	.carouse_swipe .carouse_tab li.active{ background:#e33057;}
+
+ 
+	.carouse_swipe_list{ position:relative; visibility:hidden; width:1200px; margin:0 auto; padding-bottom:10px;-moz-user-select:none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none; user-select: none; }
+	.carouse_swipe_list .carouse_swipe_box {width:1200px; position:relative; overflow:hidden; margin:0 auto;}
+	.carouse_swipe_list .carouse_swipe_box div{ position:relative;}
+	.carouse_swipe_list .carouse_swipe_box ul{float:left; width:100%; position:relative; overflow:hidden;}
+	.carouse_swipe_list .carouse_btn li{ position:absolute; top:22%; left:0;width:40px; height:65px; overflow:hidden; cursor:pointer;}
+	.carouse_swipe_list .carouse_btn li i{ width:19px; height:33px; display:block;background:url(../images/sprite_home.png) no-repeat -94px -333px; margin:15px 0 0 10px;}
+	.carouse_swipe_list .carouse_btn li i:hover{ background-position:-94px -376px;}
+	.carouse_swipe_list .carouse_btn li.next{ left:auto; right:0;}
+	.carouse_swipe_list .carouse_btn li.next i{ background-position:-128px -333px;}
+	.carouse_swipe_list .carouse_btn li.next i:hover{ background-position:-128px -376px;}
+	.carouse_swipe_list .carouse_btn li.onhover{ background-position:-94px -376px;}
+	.carouse_swipe_list .carouse_btn li.onhover:hover{ background-position:-94px -376px;}
+	.carouse_swipe_list .carouse_tab{ position:absolute; bottom:10px; text-align:center; width:100%; display:none;}
+	.carouse_swipe_list .carouse_tab li{ width:12px; height:12px; border-radius:100%; display:inline-block; position:relative; overflow:hidden; margin:0 2px; cursor:pointer;}
+	.carouse_swipe_list .carouse_tab li.active { width:20px; height:20px; margin-top:-4px;}
+	.carouse_swipe_list .carouse_tab li.active i{ background:#ffffff; width:12px; height:12px; display:block; border-radius:100%; position:absolute; left:4px; top:4px;}
+	
+	 
