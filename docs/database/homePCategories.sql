@@ -1,0 +1,12 @@
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (955613, 3689, 'a3578a-a3604a-a3689a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (979987, 3666, 'a3578a-a3604a-a3666a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (979987, 3956, 'a3578a-a3946a-a3956a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (982798, 3689, 'a3578a-a3604a-a3689a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (999325, 3676, 'a3578a-a3603a-a3676a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (999897, 3943, 'a3578a-a3608a-a3943a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001127, 3671, 'a3578a-a3607a-a3671a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001298, 3665, 'a3578a-a3603a-a3665a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001298, 3676, 'a3578a-a3603a-a3676a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001339, 3674, 'a3578a-a3607a-a3674a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001445, 3943, 'a3578a-a3608a-a3943a', 2);
+INSERT INTO `products_to_categories` (`products_id`, `categories_id`, `cat_path`, `cat_level`) VALUES (1001446, 3676, 'a3578a-a3603a-a3676a', 2);
