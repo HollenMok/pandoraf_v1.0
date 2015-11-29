@@ -143,7 +143,22 @@ class MultilingualController{
 			}
 		}
 		$this->createCurl($url);
-		echo "<pre>";print_r($this->__tostring()); exit; 
+		$subject = $this->__tostring();
+		$pattern = '/"([^"]+)"/';
+		preg_match($pattern,$subject,$find);
+		echo "<pre>";print_r($find); exit; 
 	}
-	
+	/**
+	 * @desc  article translate by translate.google.cn
+	 * @access public 
+	 * @author HollenMok
+	 * @date 2015/11/05
+	 * @param string article 
+	 * @return mixed 
+	 */
+	public function articleTranslate($article){
+		
+	}
 }
+
+
