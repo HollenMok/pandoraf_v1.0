@@ -36,7 +36,6 @@ class newarrivalDbqueryNewarrival{
 		 " AND p.products_date_added > DATE_ADD(NOW(),INTERVAL -15 DAY) ORDER BY p.products_date_added DESC";
 		$this->dbInstance->dbQuery($sql);
 		$result = $this->dbInstance->getCol();
-		echo "<pre>testingByHollenMok";print_r($result); exit; 
 		return $result;
 	}
 }
