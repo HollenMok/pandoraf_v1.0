@@ -33,7 +33,8 @@ class newarrivalDbqueryNewarrival{
 		$sql = "SELECT DISTINCT p.products_id FROM products AS p JOIN ".
 		 "products_to_categories AS pc ON pc.products_id=p.products_id LEFT JOIN products_attributes AS pa".
 		 " ON pa.products_id=p.products_id WHERE p.products_status=1 AND p.clear_stock = 0 AND p.products_sale_price > 0".
-		 " AND p.products_date_added > DATE_ADD(NOW(),INTERVAL -15 DAY) ORDER BY p.products_date_added DESC";
+		 " ORDER BY p.products_date_added DESC";
+		//AND p.products_date_added > DATE_ADD(NOW(),INTERVAL -15 DAY)
 		$this->dbInstance->dbQuery($sql);
 		$result = $this->dbInstance->getCol();
 		return $result;

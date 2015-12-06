@@ -1,0 +1,60 @@
+<html>
+<head>
+{include file='web/display/head.html'}
+<title>product detail</title>
+</head>
+<body>
+{include file='web/display/head/head.html'}
+{include file='web/display/common/location.html'}
+<div class="wrap">
+   <div class="category_content">
+          <div class="top_banner">
+               <a href="{$banner.banners_url}" title="{$banner.title}">
+                   <img src="/applications/pandoraf/templates/web/images/demo002.jpg" />               
+               </a>
+          </div>
+          <div class="wrap_left">
+              <div class="category_now">
+                    <h3>
+                       categories
+                    </h3>
+                    <div class="category_now_list">
+                    </div>
+              </div>
+              <div class="left_banner">
+                   <a href="">
+                         <img src="/applications/pandoraf/templates/web/images/demo001.jpg" />
+                   </a>
+              </div>
+          </div>
+          <div class="wrap_right">
+                  <div class="category_content_goods">
+                         <ul class="goodsbox">
+                               {foreach from=$productList item=item}
+                                 <li>
+                                    <span class="img">
+                                       <a href="{$item.url}">
+                                            <img src="/applications/pandoraf/templates/web/images/grey.gif" data-original="{$item.image_url}" class="bg_lazy" alt="{$item.products_name}" cover="{$item.image_cover}" ori="{$item.image_url}"/>
+                                       </a>
+                                    </span>
+                                    <div class="item_bottom">
+                                          <span class="title">
+                                               <a href="{$item.url}" title="{$item.products_name}">
+                                                   {$item.products_name}
+                                               </a>
+                                          </span>
+                                          <span class="price" oriPrice="{$item.final_price}">
+                                             {$item.products_price}                                          
+                                          </span>
+                                    </div>
+                                   </li> 
+                               {/foreach}
+                         </ul>
+                  </div>
+           </div>
+    </div>
+</div>    
+{include file='web/display/product_detail/bottom.html'}
+{include file='web/display/foot/foot.html'}
+</body>
+</html>

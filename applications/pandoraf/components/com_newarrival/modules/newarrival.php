@@ -9,22 +9,29 @@
 *
 */
 class newarrivalModuleNewarrival{
+	public $modProductlist; 
 	
 	public function __construct(){
 		require ROOT.'/pf_core/factory.php';
+		
 		require ROOT.'/pf_core/dbquery/pandoraf/newarrival/newarrival.php';
+		
 		$this->newarrivalQuery = new newarrivalDbqueryNewarrival();
+		
 		require ROOT.'/applications/pandoraf/models/mod_productlist/productlist.php';
 		$this->modProductlist = new modProductlist();
 	}
 	public function display(){
 		$productIds = $this->newarrivalQuery->getResult();
+		//get top 100 
+		$productIds = array_slice($productIds,0,100);
 		$dir = "gallery";
 		$item = array();
-		foreach ($product_ids as $pid){
+		$productList = array();
+		foreach ($productIds as $k => $pid){
 			$item = $this->modProductlist->getGeneralInfo($pid, $dir, true);
-			$productList[] = $item; 
-		}				
-		return $productList; 
+			$productList[] = $item;
+		}
+		return $productList;
 	}
 }
