@@ -18,10 +18,11 @@ class ProductController{
 		$this->productModuleProduct =  new productModuleProduct();
 	}
 	
-	public function display(){
-		
+	public function display(){		
 		$this->smarty = new Smarty();
 		$productInfo = $this->productModuleProduct->display();
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
 		$this->smarty->assign('productInfo',$productInfo);
 		$this->smarty->display('web/display/product_view.html');exit;
 	}

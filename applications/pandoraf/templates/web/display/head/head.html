@@ -50,18 +50,15 @@
 <div class="wrap">
 	<div class="channel">
 		<ul>
+		{foreach from=$Navs item=item}
 				<li>
-					<b><a href="">Home</a></b>
-				</li>
-				<li>
-					<b><a href="">Weekly new</a></b>
-				</li>
-				<li>
-					<b><a href="">Dresses</a></b>
-				</li>
-				<li>
-					<b><a href="">Top Sale</a></b>
-				</li>
+					<b>
+					    <a href="{$item.url}">
+					         {$item.name}
+					    </a>
+					</b>
+				</li>				
+	     {/foreach}
 		</ul>
 	</div>
 </div>

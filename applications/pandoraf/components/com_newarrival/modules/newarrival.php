@@ -33,7 +33,7 @@ class newarrivalModuleNewarrival{
 			$catInfo = $this->modProductlist->productQuery->getCatId($pid);
 			$url = str_replace(' ','-',$catInfo['categories_name']);
 			//url rewirte expecting 
-			$item['url'] = $url."-".$catInfo['categories_id']."/p-".$item['products_id'].".html";
+			$item['url'] = "/".$url."-".$catInfo['categories_id']."/p-".$item['products_id'].".html";
 			$productList[] = $item;
 		}
 		return $productList;

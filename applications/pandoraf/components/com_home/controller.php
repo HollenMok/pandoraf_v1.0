@@ -24,6 +24,8 @@ class HomeController{
 	}
 	public function display(){
 		$this->homeModuleHome->display();
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
 		$this->smarty->display('web/display/home.html');
 	}
 }

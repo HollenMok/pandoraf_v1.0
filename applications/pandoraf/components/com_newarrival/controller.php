@@ -11,7 +11,7 @@
 class NewarrivalController{
 	public $newarrivalModuleNewarrival;
 	public $smarty;
-	public function __construct(){
+	public function __construct(){		
 		//Smarty engine/Smarty 引擎
 		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
 		require 'modules/newarrival.php';
@@ -21,6 +21,8 @@ class NewarrivalController{
 	public function display(){
 		$this->smarty = new Smarty();
 		$productList = $this->newarrivalModuleNewarrival->display();
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
 		$this->smarty->assign('productList',$productList);
 		$this->smarty->display('web/display/new_arrival.html');exit;
 	}

@@ -102,6 +102,9 @@ RewriteRule ^(.*)/p-([0-9]+).html$ index.php?com=product&products_id=$2&%{QUERY_
 #New Product
 RewriteRule ^(.*)-([0-9]+)/p-([0-9]+).html$ index.php?com=product&products_id=$3&%{QUERY_STRING} [L]
 
+#Home page
+RewriteRule ^home/$ index.php?com=home&%{QUERY_STRING} [L,NC]
+
 #New Arrival
 RewriteRule ^/new-arrivals/$ index.php?com=newarrival&t=display&%{QUERY_STRING}[L,NC]
 RewriteRule ^new-arrivals/(\d{4}-\d{1,2}-\d{1,2})/$ index.php?com=newarrival&t=display&date=$1&%{QUERY_STRING}[L,NC]
