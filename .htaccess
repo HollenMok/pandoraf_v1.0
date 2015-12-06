@@ -1,0 +1,246 @@
+# Example:
+# <Directory "/usr/local/apache/htdocs">
+#   AllowOverride Options
+# </Directory>
+#
+# 'All' with also work. (This configuration is in the
+# apache/conf/httpd.conf file)
+# The following makes adjustments to the SSL protocol for Internet
+# Explorer browsers
+#<IfModule mod_setenvif.c>
+#  <IfDefine SSL>
+#    SetEnvIf User-Agent ".*MSIE.*" \
+#             nokeepalive ssl-unclean-shutdown \
+#             downgrade-1.0 force-response-1.0
+#  </IfDefine>
+
+#</IfModule>
+# AcceptPathInfo On
+
+# php_value session.use_trans_sid 0
+
+
+#RewriteCond %{HTTP:Accept-Language} ^zh-cn.*$ [NC]
+#RewriteRule ^(.*)$  updating.html [L]
+
+
+# Ultimate SEO URLs BEGIN
+
+#Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{http_host} ^pandoraf.com [nc]
+RewriteRule ^(.*)$ http://www.pandoraf.com/$1 [L,r=301,nc]
+
+RewriteRule ^ru/(.*)$  $1?lang=ru-RU&%{QUERY_STRING} [L]
+RewriteRule ^es/(.*)$  $1?lang=es-ES&%{QUERY_STRING} [L]
+RewriteRule ^it/(.*)$  $1?lang=it-IT&%{QUERY_STRING} [L]
+RewriteRule ^fr/(.*)$  $1?lang=fr-FR&%{QUERY_STRING} [L]
+RewriteRule ^pt/(.*)$  $1?lang=pt-BR&%{QUERY_STRING} [L]
+RewriteRule ^de/(.*)$  $1?lang=de-DE&%{QUERY_STRING} [L]
+
+#404Error
+ErrorDocument 404 /page_not_found
+#Page Not Found
+RewriteRule ^page_not_found$ index.php?com=sitemap&t=display404 [L]
+
+RewriteRule ^sitemap/(.+)$ /cache/static_cache/sitemap/$1?%{QUERY_STRING} [L]
+RewriteRule ^sitemap.xml$ /cache/static_cache/sitemapindex/sitemap.xml
+
+#RewriteCond %{QUERY_STRING} ^|options\=(.*)$
+
+#index page
+RewriteRule ^index.html$ index.php [L]
+
+RewriteRule ^checkout.html$ index.php?com=shopcart&t=proceedCheckout&%{QUERY_STRING}
+
+RewriteRule ^reviews-([0-9]+)-([0-9]+).html$ index.php?com=product&t=getReviews&page=$2&products_id=$1&%{QUERY_STRING}
+
+#RewriteRule ^alsobuy-([0-9]+).html$ index.php?com=product&t=getAlsoBuy&pid=$1&%{QUERY_STRING}
+
+#login or logout
+RewriteRule ^login.html$ index.php?com=account&t=sign&%{QUERY_STRING} [L]
+RewriteRule ^register.html$ index.php?com=account&t=reg&%{QUERY_STRING} [L]
+RewriteRule ^register.php$ index.php?com=account&t=login&pannel=register&%{QUERY_STRING} [L]
+RewriteRule ^logout.html$ index.php?com=account&t=logout&%{QUERY_STRING} [L]
+RewriteRule ^fb.php$ index.php?com=account&t=login&logWith=facebook&%{QUERY_STRING} [L]
+RewriteRule ^twitter.php$ index.php?com=account&t=login&logWith=twitter&%{QUERY_STRING} [L]
+
+#Search
+RewriteRule ^find/(.*?)/c-(.*?)-s-([0-9])-ps-(.*?)-p-(.*?).html$ index.php?com=search&t=display&keywords=$1&cat_id=$2&sort=$3&pagesize=$4&page=$5&%{QUERY_STRING}
+RewriteRule ^find/(.*?)/.html$ index.php?com=search&t=display&keywords=$1%{QUERY_STRING}
+RewriteRule ^find/(.*?).html$ index.php?com=search&t=display&keywords=$1%{QUERY_STRING}
+
+#new search 
+RewriteRule ^buy/(.*?)/([0-9]+)-v-([0-9,]+)-([01]+)-([0-9]+)-([0-9]+)-price-([0-9\.]+)-([0-9\.]+)_p([0-9]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$2&filters=$3&style=$4&sort=$5&pagesize=$6&pfrom=$7&pto=$8&page=$9&%{QUERY_STRING} [L]
+RewriteRule ^buy/(.*?).html$ index.php?com=search&t=display&keywords=$1%{QUERY_STRING} [L]
+
+#SEM New search
+RewriteRule ^search/(.[^\/]+).html$ index.php?com=search&t=display&keywords=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^search/(.+)/([0-9]+).html$ index.php?com=search&t=display&keywords=$1&page=$2&%{QUERY_STRING} [L]
+
+RewriteRule ^search/(.+)/v-([0-9,]+).html$ index.php?com=search&t=display&keywords=$1&filters=$2&%{QUERY_STRING} [L]
+RewriteRule ^search/(.+)/v-([0-9,]+)/([0-9]+).html$ index.php?com=search&t=display&keywords=$1&filters=$2&page=$3&%{QUERY_STRING} [L]
+
+RewriteRule ^search/(.+)/([a-z\-]+)-([0-9]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$3&%{QUERY_STRING} [L]
+RewriteRule ^search/(.+)/([a-z\-]+)-([0-9]+)/([0-9]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$3&page=$4&%{QUERY_STRING} [L]
+
+RewriteRule ^search/(.+)/([a-z\-]+)-([0-9]+)/v-([0-9,]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$3&filters=$4&%{QUERY_STRING} [L]
+RewriteRule ^search/(.+)/([a-z\-]+)-([0-9]+)/v-([0-9,]+)/([0-9]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$3&filters=$4&page=$5&%{QUERY_STRING} [L]
+
+RewriteRule ^search/(.+)/([a-z\-]+)-([0-9]+)/v-([0-9,]+)/([0-9]+).html$ index.php?com=search&t=display&keywords=$1&cat_id=$3&filters=$4&page=$5&%{QUERY_STRING} [L]
+
+
+#Product
+RewriteRule ^A/(.*)$  $1?&%{QUERY_STRING} [L]
+
+RewriteRule ^(.*)/p-([0-9]+).html$ index.php?com=product&products_id=$2&%{QUERY_STRING}
+
+
+#New Product
+RewriteRule ^(.*)-([0-9]+)/p-([0-9]+).html$ index.php?com=product&products_id=$3&%{QUERY_STRING} [L]
+
+#New Arrival
+RewriteRule ^/new-arrivals/$ index.php?com=newarrival&t=display&%{QUERY_STRING}[L,NC]
+RewriteRule ^new-arrivals/(\d{4}-\d{1,2}-\d{1,2})/$ index.php?com=newarrival&t=display&date=$1&%{QUERY_STRING}[L,NC]
+RewriteRule ^new-arrivals/(\d{4}-\d{1,2}-\d{1,2})/([0-9]+).html$ index.php?com=newarrival&t=display&date=$1&page=$2%{QUERY_STRING}[L,NC]
+RewriteRule ^new-arrivals/([0-9]+).html$ index.php?com=newarrival&t=display&page=$1%{QUERY_STRING}[L]
+RewriteRule ^new-arrivals/(.*)-([0-9]+)/v-([0-9,]+)/$ index.php?com=newarrival&cat_id=$2&filter_value=$3&%{QUERY_STRING}[L]
+RewriteRule ^new-arrivals/(.*)-([0-9]+)/$ index.php?com=newarrival&t=display&cat_id=$2&%{QUERY_STRING}[L]
+RewriteRule ^new-arrivals/(.*)-([0-9]+).html$ index.php?com=newarrival&t=display&cat_id=$2&page=$3%{QUERY_STRING}[L]
+RewriteRule ^new-arrivals/(.*)-([0-9]+)/v-([0-9,]+)/([0-9]+).html$ index.php?com=newarrival&cat_id=$2&filter_value=$3&page=$4%{QUERY_STRING}[L]
+RewriteRule ^new-arrivals/(.*)-([0-9]+)/([0-9]+).html$ index.php?com=newarrival&cat_id=$2&page=$3%{QUERY_STRING}[L]
+
+#New Category
+RewriteRule ^([^/]*)-([0-9]+)/$ index.php?com=category&cat_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^([^/]*)-([0-9]+)/([0-9]+).html$ index.php?com=category&cat_id=$2&page=$3&%{QUERY_STRING} [L]
+
+RewriteRule ^([^/]*)-([0-9]+)/v-([0-9,]+)/$ index.php?com=category&cat_id=$2&filter_value=$3&%{QUERY_STRING} [L]
+RewriteRule ^([^/]*)-([0-9]+)/v-([0-9,]+)/([0-9]+).html$ index.php?com=category&cat_id=$2&filter_value=$3&page=$4&%{QUERY_STRING} [L]
+RewriteRule ^([^/]*)-([0-9]+)/v-([0-9,]+)-o-([0-9]+)-s-([0-9]+)-price-([0-9\.]+)-([0-9\.]+)/$ index.php?com=category&cat_id=$2&filter_value=$3&sort=$4&pagesize=$5&pfrom=$6&pto=$7&%{QUERY_STRING} [L]
+RewriteRule ^([^/]*)-([0-9]+)/v-([0-9,]+)-o-([0-9]+)-s-([0-9]+)-price-([0-9\.]+)-([0-9\.]+)/([0-9]+).html$ index.php?com=category&cat_id=$2&filter_value=$3&sort=$4&pagesize=$5&pfrom=$6&pto=$7&page=$8&%{QUERY_STRING} [L]
+
+#New New-Arrival
+RewriteRule ^new-arrivals/$ index.php?com=newarrival&%{QUERY_STRING} [L,NC]
+
+#Top Seller
+RewriteRule ^top-sellers.html$ index.php?com=topseller&t=display [L]
+RewriteRule ^top-sellers-([0-9]+).html$ index.php?com=topseller&t=topsellList&cat_id=$1&%{QUERY_STRING} [L]
+RewriteRule ^top-sellers-([0-9]+)-v(.*).html$ index.php?com=topseller&t=topsellList&cat_id=$1&filter=$2&%{QUERY_STRING} [L]
+
+#New Top Seller
+RewriteRule ^top-sale/$ index.php?com=topseller&t=display [L]
+RewriteRule ^top-sale/([a-z\-]+)-([0-9]+)/$ index.php?com=topseller&t=topsellList&cat_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^top-sale/([a-z\-]+)-([0-9]+)/([0-9]+).html$ index.php?com=topseller&t=topsellList&cat_id=$2&page=$3&%{QUERY_STRING} [L]
+
+#Shopcart
+RewriteRule ^shopping_cart.php$ index.php?com=shopcart&%{QUERY_STRING} [L]
+
+#help
+#RewriteRule help_center$ index.php?com=help&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)_hi([0-9]+)$ index.php?com=help&t=displayDetail&art_id=$2&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)_hl([0-9]+)$ index.php?com=help&t=displayList&cat_id=$2&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)_hl([0-9]+)-p([0-9]+)$ index.php?com=help&t=displayList&cat_id=$2&page=$3&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)help-search-k-(.*)$ /index.php?com=help&t=displaySearch&search=$2&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)help-search-p([0-9]+)-k-(.*)$ /index.php?com=help&t=displaySearch&page=$2&search=$3&%{QUERY_STRING} [L]
+
+#article
+RewriteRule help_center$ index.php?com=article&%{QUERY_STRING} [L]
+#RewriteRule ^A/(.*)$  $1?&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-hc(.*).html$ index.php?com=article&t=article&cat_id=$2&%{QUERY_STRING}
+#RewriteRule ^(.*)-hc(.*)-ha(.*).html$ index.php?com=article&t=info&cat_id=$2&article_id=$3&%{QUERY_STRING}
+
+#reviews
+#RewriteRule ^(.*)-video([s]?)-p([0-9]+)-v([0-9]+).html$ index.php?com=review&t=reviewDetail&type=video&products_id=$3&media_id=$4&%{QUERY_STRING} [L]
+#RewriteRule ^(.*)-image([s]?)-p([0-9]+)-i([0-9]+).html$ index.php?com=review&t=reviewDetail&type=image&products_id=$3&media_id=$4&%{QUERY_STRING} [L]
+
+#Account
+RewriteRule ^account.html$ index.php?com=account&t=appGeneralInfo&%{QUERY_STRING} [L]
+
+#Lucky
+RewriteRule ^lucky.html$ index.php?com=lucky&%{QUERY_STRING} [L]
+
+# Ultimate SEO URLs END
+
+
+# Block Bad Bots
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR]
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR]
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule .* - [F]
+
