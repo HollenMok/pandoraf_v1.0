@@ -29,7 +29,8 @@ class modProductlist{
 		  $generalInfo = $this->productQuery->getGeneralInfo($product_id);
 		  $gInfo = $generalInfo['0'];	
 	    //redis 
-	    //products_id	    
+	    //products_id
+		 $pInfo['products_id'] =  $gInfo['products_id'];
 	    //products_model SKU
 	     $pInfo['products_model'] =  $gInfo['products_model'];
 	    //products_name 
@@ -54,6 +55,7 @@ class modProductlist{
 	     $pInfo['show_size'] =  $gInfo['show_size'];
          return $pInfo;
    }
+   
 
 }
 	

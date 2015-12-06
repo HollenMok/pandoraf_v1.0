@@ -28,6 +28,12 @@ class productDbqueryProduct{
 		$result = $this->dbInstance->getAll();
 		return $result;
 	}
+	public function getCatId($products_id){
+		$sql = 'select ptc.categories_id, cd.categories_name from products_to_categories as ptc left join categories_description as cd on cd.categories_id = ptc.categories_id where ptc.products_id='.$products_id;
+		$this->dbInstance->dbQuery($sql);
+		$result = $this->dbInstance->getAll();
+		return $result['0'];
+	}
 }
 
 
