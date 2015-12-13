@@ -1,0 +1,11 @@
+*.zip
+database/sample_struct.sql
+database/products.sql
+*.sql
+*.php
+*.php
+applications/pandoraf/components/com_newarrival/modules/newarrival.php
+*.php
+applications/pandoraf/models/mod_productlist/productlist.php
+database/database.txt
+*.txt
