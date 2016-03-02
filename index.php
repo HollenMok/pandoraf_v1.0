@@ -13,7 +13,7 @@
 //   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
 //-+---------------------------------------------------------------------------------------------+
 
-
+error_reporting(null);
 //check the PHP version, require PHP version more than 5.3.0/要求PHP版本大于5.3.0
 if(version_compare(PHP_VERSION,'5.3.0','<'))
 	die('require PHP version >5.3.0 !');

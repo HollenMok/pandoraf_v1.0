@@ -18,7 +18,7 @@ $task = $_GET['t'];
 if($controller){
 	require ROOT.'/applications/pandoraf/components/com_'.$controller.'/'.$controller.'.php';
 }else{
-	require ROOT.'/applications/pandoraf/components/com_index/index.php';
+	require ROOT.'/applications/pandoraf/components/com_home/home.php';
 }
 
 ?>
