@@ -92,6 +92,7 @@ class ShopcartController{
 		$PaymentDetails->TaxTotal = $taxTotal;
 		
 		$setECReqDetails = new SetExpressCheckoutRequestDetailsType();
+		$setECReqDetails->BrandName = "pandoraf.com";
 		$setECReqDetails->PaymentDetails[0] = $PaymentDetails;
 		$setECReqDetails->CancelURL = $cancelUrl;
 		$setECReqDetails->ReturnURL = $returnUrl;
