@@ -1,6 +1,13 @@
 
 # CHANGELOG
 
+## V3.2.4 (January 20, 2016)
+    * Updated SSL Version in curl to TLSv1.2 only
+
+## V3.2.3 (December 9, 2015)
+
+   * Added a `tls` mode to verify support for TLSv1.2
+
 ## V2.5.4 (September 23, 2014)
 
    * namespace annotation fixes

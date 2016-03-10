@@ -8,6 +8,7 @@
 * @date 2015/09/15
 *
 */
+
 class shopcartModuleShopcart{
 	
 	public function __construct(){

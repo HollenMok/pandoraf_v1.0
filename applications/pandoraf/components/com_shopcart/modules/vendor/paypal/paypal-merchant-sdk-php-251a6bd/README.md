@@ -1,6 +1,45 @@
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
+
+## TLSv1.2 Update
+> **The [PCIv3.1 DSS (PDF)](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf) mandates (p.46) that TLSv1.0 be retired from service by June 30, 2016. All organizations that handle credit card information are required to comply with this standard. As part of this obligation, PayPal is updating it's services to require TLSv1.2 for all HTTPS connections. [Click here](https://github.paypal.com/SDK-R/tls-update) for more information**
+
+> A new `mode` has been created to test if your server/machine handles TLSv1.2 connections. Please use `tls` mode instead of `sandbox` to verify. You can return back to `sandbox` mode once you have verified. Please have a look at this [Sample Configuration](https://github.com/paypal/merchant-sdk-php/blob/namespace-php5.3/samples/Configuration.php#L10-15).
+
+## POODLE Update
+- Because of the Poodle vulnerability, PayPal has disabled SSLv3. 
+- To enable TLS encryption, the changes were made to [PPHttpConfig.php](https://github.com/paypal/sdk-core-php/blob/namespace-5.3/lib/PayPal/Core/PPHttpConfig.php#L11) in [SDK Core](https://github.com/paypal/sdk-core-php/tree/namespace-5.3) to use a cipher list specific to TLS encryption.
+``` php
+    /**
+	 * Some default options for curl
+	 * These are typically overridden by PPConnectionManager
+	 */
+	public static $DEFAULT_CURL_OPTS = array(
+		CURLOPT_SSLVERSION => 1,
+		CURLOPT_CONNECTTIMEOUT => 10,
+		CURLOPT_RETURNTRANSFER => TRUE,
+		CURLOPT_TIMEOUT        => 60,	// maximum number of seconds to allow cURL functions to execute
+		CURLOPT_USERAGENT      => 'PayPal-PHP-SDK',
+		CURLOPT_HTTPHEADER     => array(),
+		CURLOPT_SSL_VERIFYHOST => 2,
+		CURLOPT_SSL_VERIFYPEER => 1,
+		CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
+	);
+```
+- There are two primary changes done to curl options: 
+    - CURLOPT_SSLVERSION is set to 1 . See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html) for more information
+    - CURLOPT_SSL_CIPHER_LIST was set to TLSv1, See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html) for more information
+
+All these changes are included in the recent release, along with many other bug fixes. We highly encourage you to update your versions, by either using `composer` or running this command shown below:
+
+```
+curl -k -L https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable-php5.3/samples/install.php | php    
+        OR        
+wget  https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable-php5.3/samples/install.php
+php install.php
+```
+
    
 #### This SDK is deprecated. It is strongly recommended that new implementations use the [PHP Rest SDK](https://github.com/paypal/rest-api-sdk-php)
 
