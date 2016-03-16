@@ -1,0 +1,139 @@
+<html>
+<head>
+{include file='web/display/head.html'}
+<title>Home</title>
+</head>
+<body>
+{include file='web/display/head/head.html'}
+<div class="wrap">
+   <h4 class="registration_title">
+        Welcome to join us!
+   </h4>
+   <div class="registration_log">
+        <div class="log_in">
+             <form method="post" name="toLogin" id="sign_form">
+                   <h5>
+                       SIGN IN 
+                   </h5>
+                   <div class="ipt_t">
+                        <div class="inputtext_box"> 
+                            <i></i>
+                            <div class="l_input_title"> 
+                                 <strong>
+                                     *
+                                 </strong>
+                                 Email
+                            </div>
+                            <i></i>
+                            <input class="inputtext" name="email" type="text" onBlur="checkEmail($(this));showerr();" >
+                            <br>
+                            <span class="error" id='emailerr' msg1="{$LA_EMAIL_NOT_EMPTY}" msg2="{$LA_VALID_EMAIL}">
+                            </span>
+                        </div>    
+                         <div class="inputtext_box">
+                             <div class="l_input_title"> 
+                                   <strong>
+                                      *
+                                   </strong>
+                                   Password
+                             </div>
+                             <em></em>
+                             <input class="inputtext" name="pwd" type="password" onkeydown="globelQuery(event);">
+                             <br>
+                             <span class="error" id='pwderr' msg1="{$LA_PASSWORD_EMPTY}" msg2="{$LA_PASSWORD_LENGTH}">
+                             </span>
+                              
+                         </div>
+                   </div>
+                   <div class="ipt_b">
+            	      <span class="form_submit">
+            	             <input id='signbtn' type="button" onClick="return chkLogin(toLogin,'all')"/>
+            	             Sign in 
+            	      </span>
+                   </div>
+                   
+             </form>
+             <p class="forgetPas">
+                 <a href="/index.php?com=account&t=findpwd1">
+                      forgot password
+                 </a>
+             </p>
+             
+        </div>
+        <div class="registration">
+           <h5>
+              NEW TO PANDORAF
+           </h5>
+           <div class="operalForm">
+               <form action="index.php?com=account&t=registernew" method="post" name="toReg" onSubmit="return chkreg(toReg,'all')">
+                     <input type="hidden" name="url" value="{$backUrl}">
+                     <div class="ipt_t">
+                          <div class="l_input_title"> 
+                               <strong>
+                                   *
+                               </strong>
+                               Email
+                          </div>
+					      <i></i>
+                          <input class="inputtext" name="email" type="text" value='{$emailval}' onBlur="chkEmail(this.value)"/>
+                          <br>
+                          <span class="error" id='emailerr2' msg1="{$LA_EMAIL_NOT_EMPTY}" msg2="{$LA_VALID_EMAIL}">
+                             {$email}
+                          </span>
+                     </div>
+                     <div class="ipt_t">
+                           <div class="l_input_title"> 
+                                 <strong>
+                                    *
+                                 </strong>
+                                 Password
+                           </div>
+                           <em></em>
+                           <input class="inputtext" name="pwd" type="password">
+                           <br>
+                           <span class="error" id='pwderr2' msg1="{$LA_PASSWORD_EMPTY}" msg2="{$LA_PASSWORD_LENGTH}">
+                               {$pwd}
+                           </span>
+                     </div>
+                     <div class="ipt_t">
+                          <div class="l_input_title"> 
+                                 <strong>
+                                    *
+                                 </strong>
+                                 Re-enter Password
+                          </div>
+                          <em></em>
+                          <input class="inputtext" name="repwd" type="password">
+                          <br>
+                          <span class="error" id='repwderr2' msg="{$LA_PASSWORD_DIFF}">
+                              {$repwd}
+                          </span>
+                     </div>
+                     <p class="register_tips">
+                         <span class="checkbox">
+                             <input type="checkbox" class="check_on" id="agree" checked="checked" name='agree' value="1" />
+                         Agreement</span>
+                         
+                     </p>
+                     <span class="error" style="display:block;clear:both;" id="agreetip" msg="{$LA_R_AGREE_ERROR}">
+                         {$agree}
+                     </span>
+                     <div class="ipt_b">
+                          <span class="form_submit">
+                                <input type="submit" />
+                                Register
+                          </span>
+                     </div>
+                     
+               </form>
+           </div>
+        </div>
+   </div>
+   
+</div>
+
+{include file='web/display/product_detail/bottom.html'}
+{include file='web/display/foot/foot.html'}
+{include file='web/display/home/bottom.html'}
+</body>
+</html>

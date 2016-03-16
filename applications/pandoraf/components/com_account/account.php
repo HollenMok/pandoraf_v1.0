@@ -15,6 +15,10 @@
 
 require  'controller.php';
  $controller = new AccountController();
- $controller->login();
+if($task){
+	$controller->$task();
+}else{
+	$controller->display();
+}
 
 ?>

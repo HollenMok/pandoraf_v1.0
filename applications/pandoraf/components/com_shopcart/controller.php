@@ -180,12 +180,17 @@ class ShopcartController{
        $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
        //var_dump($DoECResponse);
        if($DoECResponse->Ack == 'Success'){
-       	  echo "success!";exit; 
+       	  $this->successExpressCheckout(); 
        	
        }else{
        	  echo "failed!";exit;
        }
 		
+	}
+	public function successExpressCheckout(){
+		$orderInfo = "success!";
+		$this->smarty->assign('orderInfo',$orderInfo);
+		$this->smarty->display('web/display/shopcart/successExpressCheckout.html');exit;
 	}
 	
 }

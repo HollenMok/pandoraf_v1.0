@@ -15,11 +15,24 @@
 
 class AccountController {
 	public function __construct(){
-		echo "wake up pf account!";exit; 
-	}
-	
-	public function login(){
+		//Smarty engine/Smarty 引擎
+		require ROOT.'/pf_core/smarty/libs/Smarty.class.php';
+		$this->smarty = new Smarty();
 		
 	}
+	/**
+	 * @desc 登陆页面
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-16  
+	 * @return void
+	 */
+	public function sign(){
+		
+	    $this->smarty->display('web/display/account/login.html');
+	}
+	//public function login(){
+		
+	//}
 }
 ?>
