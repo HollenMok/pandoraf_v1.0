@@ -25,7 +25,7 @@ class accountModuleAccount{
 	 */
     public function register(){
 		$email = $_POST['email'];
-		$pwd = $_POST['password'];
+		$pwd = $_POST['pwd'];
 
 		//验证邮箱是否存在/check email existence
         $isEmailExist = $this->accountQuery->isEmailExist($email);
@@ -38,6 +38,23 @@ class accountModuleAccount{
 		$session = pFactory::sessionInstance();
 		$_SESSION['customers_id'] = $result;
 		return $result;
+	}
+	/**
+	 * @desc login /登陆
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-16
+	 * @return void
+	 */
+	public function login(){
+		$email = $_POST['email'];
+		$pwd = $_POST['pwd'];
+
+		//验证邮箱是否存在/check email existence
+        $customerInfo = $this->accountQuery->isCustomerExist($email,$pwd);
+        $session = pFactory::sessionInstance();
+        $_SESSION['customers_id'] = $customerInfo;
+        return $customerInfo;
 	}
 	/*
 	* @desc get visitor ip/ 获取访问者ip

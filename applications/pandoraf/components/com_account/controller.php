@@ -28,9 +28,17 @@ class AccountController {
 		$this->smarty->assign('Navs',$initConfig);
 	    $this->smarty->display('web/display/account/login.html');
 	}
-	//public function login(){
-		
-	//}
+	/**
+	 * @desc login /登陆
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-16
+	 * @return void
+	 */
+	public function login(){
+		$result = $this->accountModuleAccount->login();
+		echo json_encode($result);exit;
+	}
 	/**
 	 * @desc register/注册
 	 * @access public
