@@ -1,16 +1,72 @@
 <?php
-//-+---------------------------------------------------------------------------------------------+
-//   A Simple and Innovative PHP Framework about Foreign Trade E-commerce @2015-07-01 Version 1.0
-//   一个简单和创新的PHP框架，为外贸电子商务开发， 始于中国共产党建党日,7月1日，版本1.0
-//-+---------------------------------------------------------------------------------------------+
-//   Update from/更新地址@https://github.com/HollenMok/pandoraf_v1.0
-//-+---------------------------------------------------------------------------------------------+
-//   Display on/项目效果展示地址 @http://www.pandoraf.com
-//-+---------------------------------------------------------------------------------------------+
-//   Apache License/开源许可协议 @http://www.apache.org/licenses/LICENSE-2.0
-//-+---------------------------------------------------------------------------------------------+
-//   Document support multi-language, aim to invite people worldwide join this project
-//   文档目标是支持多语言，让全世界的人有机会了解并参加设计这个项目，目前只支持中文与英语。
-//-+---------------------------------------------------------------------------------------------+
+/*
+ * -----------------------------
+* module of account component
+* 用户中心组件模块
+* -----------------------------
+* @author HollenMok
+* @date 2016/03/16
+*
+*/
+class accountModuleAccount{
 
-?>
+	public $accountQuery;
+	public function __construct(){
+		require ROOT.'/pf_core/factory.php';
+		require ROOT.'/pf_core/dbquery/pandoraf/account/account.php';
+		$this->accountQuery = new accountDbqueryAccount();
+	}
+	/**
+	 * @desc register/注册
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-16
+	 * @return void
+	 */
+    public function register(){
+		$email = $_POST['email'];
+		$pwd = $_POST['password'];
+
+		//验证邮箱是否存在/check email existence
+        $isEmailExist = $this->accountQuery->isEmailExist($email);
+ 
+        if(!$isEmailExist){
+        	$params['date'] = time();
+        	$params['ip'] = $this->getIP();
+        	$result = $this->accountQuery->register($email,$pwd,$params);
+        }
+		$session = pFactory::sessionInstance();
+		$_SESSION['customers_id'] = $result;
+		return $result;
+	}
+	/*
+	* @desc get visitor ip/ 获取访问者ip
+	* @author HollenMok
+	* @date 2015/08/29
+	*/
+	public function getIP(){
+		if (isset($_SERVER)) {
+			if (isset($_SERVER['HTTP_TRUE_CLIENT_IP'])){
+				$ip = $_SERVER['HTTP_TRUE_CLIENT_IP'];
+			}
+			elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			} elseif (isset($_SERVER['HTTP_CLIENT_IP'])) {
+				$ip = $_SERVER['HTTP_CLIENT_IP'];
+			} else {
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		} else {
+			if (getenv('HTTP_TRUE_CLIENT_IP')) {
+				$ip = getenv('HTTP_TRUE_CLIENT_IP');
+			} elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+				$ip = getenv('HTTP_X_FORWARDED_FOR');
+			} elseif (getenv('HTTP_CLIENT_IP')) {
+				$ip = getenv('HTTP_CLIENT_IP');
+			} else {
+				$ip = getenv('REMOTE_ADDR');
+			}
+		}
+		return $ip;
+	}
+}
