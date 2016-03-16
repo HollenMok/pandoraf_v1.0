@@ -28,7 +28,8 @@ class AccountController {
 	 * @return void
 	 */
 	public function sign(){
-		
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
 	    $this->smarty->display('web/display/account/login.html');
 	}
 	//public function login(){
