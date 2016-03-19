@@ -17,6 +17,18 @@ class AccountController {
 		$this->accountModuleAccount = new accountModuleAccount();
 	}
 	/**
+	 * @desc account homepage/用户中心首页
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-20
+	 * @return void
+	 */
+	public function display(){
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
+		$this->smarty->display('web/display/account/account.html');
+	}
+	/**
 	 * @desc login page/登陆页面
 	 * @access public
 	 * @author  HollenMok
