@@ -1252,4 +1252,29 @@ html{ height:100%;}
 	.order_form_right .pay_box .paypal_btn a:hover{background:#fdbf2f;}
 	.order_form_right .pay_box .paypal_btn span{ width:94px; height:23px; background:url(../images/sprite_home.png) no-repeat -293px -610px; margin:6px 0 0 10px; position:absolute;}
 	
+    .success{ width:720px; margin:0 auto; overflow:hidden; margin-bottom:100px;}
+	.success .icon{ position:relative;}
+	.success .icon i{ width:41px; height:30px; background:url(../images/sprite_home.png) no-repeat -316px -116px; position:absolute; top:100px; left:40px;}
+	.success .un i{ width:48px; height:42px; background:url(../images/sprite_home.png) no-repeat -409px -109px; position:absolute; top:100px; left:30px;}
+	.success .info{ float:right; width:600px; margin-top:100px;}
+	.success .info h3{font-size:20px;  margin-bottom:20px; display:block; line-height:25px;}
+	.success .info b{ clear: both; line-height:1.6; color:#666666; font-size:14px; font-weight:normal;}
+	.success .btn{ margin-top:20px;}
+
+    .order_list{ overflow:hidden; margin-bottom:50px;}
+	.order_list h2{ display:block; border-bottom:1px #dedede solid; height:40px; line-height:40px; font-size:16px; font-weight:bold;}
+	.order_list dl dt{ height:40px; line-height:40px;}
+	.order_list dl dt b{ float:left;}
+	.order_list dl dt span{ float:right;}
+	.order_list dl dd ul{ overflow:hidden;}
+	.order_list dl dd ul li{ float:left; width:100%; display:block; font-size:14px; padding:5px 0; position:relative; margin-bottom:20px;}
+	.order_list dl dd ul .order_info{ padding:15px; background:#f9f9f9;}
+	.order_list dl dd ul li b{ display:block; height:30px; line-height:30px; font-weight:normal;}
+	.order_list dl dd ul li .img{ float:left; min-height:120px; min-width:120px; margin-right:20px; border:1px #FFFFFF solid;}
+	.order_list dl dd ul li .img:hover{ border:1px #dedede solid;}
+	.order_list dl dd ul li a{ font-size:14px; color:#000000;}
+	.order_list dl dd ul li a:hover{ text-decoration:none; color:#666666;}
+	.order_list dl dd ul li .quantity{ font-size:18px; color:#e33057;}
+	.order_list dl dd ul li .total{ font-size:18px; color:#e33057;}
+	.order_list dl dd ul li .property{ overflow:hidden; position:absolute; left:156px; top:40px; line-height:1.4; color:#666666;}
 	

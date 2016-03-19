@@ -6,9 +6,65 @@
 <body>
 {include file='web/display/head/head.html'}
 <div class="wrap">
-	Thank You for shopping with us online,Your order has been placed!
+     <div class="success">
+          <div class="icon">
+              <i></i>
+          </div>
+          <div class="info">
+               <h3>Thank You for shopping with us online,Your order has been placed!</h3>
+			   <b>An email confirmation has been sent to you.</b>
+			   <p class="btn">
+			       <a href="/">
+			              <span class="form_submit">
+			                     <input name="" type="buttom" />
+			                     Continue Shopping
+			              </span>
+			       </a>
+			       <a href="/index.php?com=account">
+			              <span class="form_submit">
+			                      <input name="" type="buttom" />
+			                      My Orders
+			              </span>
+			       </a>
+			   </p>
+          </div>
+     </div>
+	
 </div>
-
+<div class="wrap">
+      <div class="order_list">
+            <h2>
+                US$10.9
+            </h2>
+            <dl>
+                 <dt>
+                     <b>
+                          Order NO: 10000001
+                     </b>
+                     <span>Expect ship in:2016/03/20 - 2016/03/28</span>
+                 </dt>
+                 <dd>
+                     <ul>
+                         <li class="order_info">
+                               <a href="/index.php?com=account" title="#">
+                                    <span class="img">
+                                         <img src="/applications/pandoraf/templates/imgServer/p962452/small/SKU189442 (8).jpg" alt="#"/>
+                                    </span>
+									<span class="title">
+									    Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress(962452)
+									</span>
+                               </a>
+                               <span class="quantity">x1</span>
+                               <span class="total">US$10.9</span>
+                               <span class="property">
+                                  SIZE:XL
+                               </span>
+                         </li>
+                     </ul>
+                 </dd>
+            </dl>
+      </div>
+</div>
 {include file='web/display/product_detail/bottom.html'}
 {include file='web/display/foot/foot.html'}
 {include file='web/display/home/bottom.html'}

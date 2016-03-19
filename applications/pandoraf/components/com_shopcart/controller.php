@@ -183,11 +183,13 @@ class ShopcartController{
        	  $this->successExpressCheckout(); 
        	
        }else{
-       	  echo "failed!";exit;
+       	  echo "failed, please contact us: cservice@pandoraf.com!";exit;
        }
 		
 	}
 	public function successExpressCheckout(){
+		require ROOT.'/applications/pandoraf/models/mod_init/initConfig.php';
+		$this->smarty->assign('Navs',$initConfig);
 		$orderInfo = "success!";
 		$this->smarty->assign('orderInfo',$orderInfo);
 		$this->smarty->display('web/display/shopcart/successExpressCheckout.html');exit;
