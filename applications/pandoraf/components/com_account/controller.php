@@ -49,7 +49,14 @@ class AccountController {
 	 */
 	public function login(){
 		$result = $this->accountModuleAccount->login();
-		echo json_encode($result);exit;
+		if($result){
+			$data['code'] = true; 
+			$data['result'] = $result[0];
+		}else{
+			$data['code'] = false;
+			$data['result'] = $result;
+		}
+		echo json_encode($data);exit;
 	}
 	/**
 	 * @desc register/注册
@@ -60,8 +67,16 @@ class AccountController {
 	 */
 	public function register(){
 		$result = $this->accountModuleAccount->register();
-		echo json_encode($result);exit;
+		if($result){
+			$data['code'] = true; 
+			$data['result'] = $result[0];
+		}else{
+			$data['code'] = false;
+			$data['result'] = $result;
+		}
+		echo json_encode($data);exit;
 	}
+	
 	/**
 	 * @desc logout/退出登陆
 	 * @access public
