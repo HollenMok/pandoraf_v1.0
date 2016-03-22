@@ -55,8 +55,8 @@ class shopcartModuleShopcart{
 		$productList['questions_url'] = '962452';
 		$productList['shareImage_url'] = '962452';
 		$productList['warehouse'] = '962452';
-		$productList['quantity'] = '962452';
-		$productList['maximum'] = '962452';
+		$productList['quantity'] = '1';
+		$productList['maximum'] = '999';
 		$productList['clearStock'] = '962452';
 		$productList['price_discount'] = '962452';
 		$productList['format_products_price'] = 'US$10.09';
