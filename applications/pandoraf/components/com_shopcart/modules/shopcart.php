@@ -21,9 +21,15 @@ class shopcartModuleShopcart{
 		$itemImage['image_url'] = '/applications/pandoraf/templates/imgServer/p962452/medium/SKU189442 (15).jpg';
 		return $itemImage;
 	}
+	
+	/**
+	 * @desc shopcart info/购物车信息
+	 * @access public
+	 * @author  HollenMok
+	 * @date  2016-03-23
+	 * @return array blockList 
+	 */
 	public function cartInfo(){
-		//test data 
-		
 		$productList['products_id'] = '962452';
 		$productList['products_model'] = 'SKU189442';
 		$productList['products_name'] = 'Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress';
@@ -97,8 +103,6 @@ class shopcartModuleShopcart{
 		$blockList['619']['formatItemTotalAmount'] = '1';
 		$blockList['619']['orderTotal'] = '1';
 		$blockList['619']['formatOrderTotal'] = '1';
-		
-		
 		
 		return $blockList; 
 	}
