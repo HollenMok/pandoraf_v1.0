@@ -58,6 +58,14 @@ class ShopcartController{
 	    $this->smarty->assign('showCheckout', $result['showCheckout']);
 	    echo $this->smarty->fetch('web/display/head/head_cart.html');
 	}
+	/**
+	 * @desc 更新购物车产品数量
+	 * @author HollenMok 2016-04-21
+	 */
+	public function updateQty(){
+	    $result = $this->shopcartModuleShopcart->updateQty();
+	    echo $result;exit;	    
+	}
 	public function setExpressCheckout(){
 		$serverName = $_SERVER['SERVER_NAME'];
 		$serverPort = $_SERVER['SERVER_PORT'];
@@ -74,7 +82,7 @@ class ShopcartController{
 		$itemDetails->Name = 'Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress(SKU189442)';
 		$itemDetails->Amount = $orderTotal;
 		
-		$itemDetails->Quantity = '1';
+		$itemDetails->Quantity = 1;
 		$itemDetails->ItemCategory =  'Digital';
 		$PaymentDetails= new PaymentDetailsType();
 		$PaymentDetails->PaymentDetailsItem[0] = $itemDetails;

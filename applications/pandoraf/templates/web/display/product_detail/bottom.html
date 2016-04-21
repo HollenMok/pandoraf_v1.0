@@ -135,7 +135,10 @@ $.fn.HoverDelay = function(params) {
 		 success:function(res){
 			 $.ajax({
 				 type:'post',
-				 url:'/index.php?com=shopcart&t=miniCart',	 
+				 url:'/index.php?com=shopcart&t=miniCart',	
+				 data:{
+					 'qty':qty,					 
+				  },
 				 success:function(res){
 					 $('.top_right .bag').html(res);
 					 $(".top .bag .box").slideDown(200);

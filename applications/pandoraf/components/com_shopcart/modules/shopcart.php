@@ -30,55 +30,58 @@ class shopcartModuleShopcart{
 	 * @return array blockList 
 	 */
 	public function cartInfo(){
-		$productList['products_id'] = '962452';
-		$productList['products_model'] = 'SKU189442';
-		$productList['products_name'] = 'Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress';
-		$productList['force_url_name'] = 'Sexy Women Plus Size V-neck Short Sleeves Lace Hollow Out Dress';
-		$productList['image_list']['products_image'] = 'upload/2015/08/SKU189442 (8).jpg';
-		$productList['image_list']['products_image_2'] = 'upload/2015/08/SKU189442_2.jpg';
-		$productList['image_list']['products_image_3'] = 'upload/2015/08/SKU189442 (15).jpg';
-		$productList['image_list']['products_image_4'] = 'upload/2015/08/SKU189442 (16).jpg';
-		$productList['image_list']['products_image_5'] = 'upload/2015/08/SKU189442 (17).jpg';
-		$productList['products_price'] = '10.09';
-		$productList['final_price'] = '10.09';
-		$productList['discount'] = '0';
-		$productList['botCat'] = '3660';
-		$productList['categories_name'] = 'Plus Size Dresses';
-		
-		$productList['categories_seo_url'] = 'Plus Size Dresses';
-		$productList['reviewAmount'] = '962452';
-		$productList['diggs'] = '962452';
-		$productList['products_bulk'] = '962452';
-		$productList['show_size'] = '962452';
-		$productList['image_url'] = ' http://pandoraf.com/thumb/list_grid//upload/2015/08/SKU189442 (8).jpg';
-		$productList['url'] = '962452';
-		$productList['review_url'] = '962452';
-		$productList['category_url'] = '962452';
-		$productList['wishlist'] = '962452';
-		
-		$productList['image_cover'] = '962452';
-		$productList['askquestion_url'] = '962452';
-		$productList['questions_url'] = '962452';
-		$productList['shareImage_url'] = '962452';
-		$productList['warehouse'] = '962452';
-		$productList['quantity'] = '1';
-		$productList['maximum'] = '999';
-		$productList['clearStock'] = '962452';
-		$productList['price_discount'] = '962452';
-		$productList['format_products_price'] = 'US$10.09';
-		
-		$productList['price'] = '962452';
-		$productList['format_final_price'] = 'US$10.09';
-		$productList['format_total_price'] = 'US$10.09';
-		$productList['attributes'] = '962452';
-		$productList['qty'] = '962452';
-		$productList['cart_id'] = '962452';
-		$productList['active'] = '962452';
-		$productList['selected'] = '962452';
-		$productList['attrs'] = '962452';
-		$productList['weight'] = '962452';
-		$productList['acce_main'] = '962452';
-		
+	    $customers_id = '2016042101';
+	    $productData = $this->shopcartQuery->getCartInfo($customers_id);
+	    foreach($productData as $k =>$v){
+	        $productList['products_id'] = $v['products_id'];
+	        $productList['products_model'] = 'SKU189442';
+	        $productList['products_name'] = 'Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress';
+	        $productList['force_url_name'] = 'Sexy Women Plus Size V-neck Short Sleeves Lace Hollow Out Dress';
+	        $productList['image_list']['products_image'] = 'upload/2015/08/SKU189442 (8).jpg';
+	        $productList['image_list']['products_image_2'] = 'upload/2015/08/SKU189442_2.jpg';
+	        $productList['image_list']['products_image_3'] = 'upload/2015/08/SKU189442 (15).jpg';
+	        $productList['image_list']['products_image_4'] = 'upload/2015/08/SKU189442 (16).jpg';
+	        $productList['image_list']['products_image_5'] = 'upload/2015/08/SKU189442 (17).jpg';
+	        $productList['products_price'] = '10.09';
+	        $productList['final_price'] = '10.09';
+	        $productList['discount'] = '0';
+	        $productList['botCat'] = '3660';
+	        $productList['categories_name'] = 'Plus Size Dresses';
+	        
+	        $productList['categories_seo_url'] = 'Plus Size Dresses';
+	        $productList['reviewAmount'] = '962452';
+	        $productList['diggs'] = '962452';
+	        $productList['products_bulk'] = '962452';
+	        $productList['show_size'] = '962452';
+	        $productList['image_url'] = ' http://pandoraf.com/thumb/list_grid//upload/2015/08/SKU189442 (8).jpg';
+	        $productList['url'] = '962452';
+	        $productList['review_url'] = '962452';
+	        $productList['category_url'] = '962452';
+	        $productList['wishlist'] = '962452';
+	        
+	        $productList['image_cover'] = '962452';
+	        $productList['askquestion_url'] = '962452';
+	        $productList['questions_url'] = '962452';
+	        $productList['shareImage_url'] = '962452';
+	        $productList['warehouse'] = '962452';
+	        $productList['quantity'] = $v['customers_basket_quantity'];
+	        $productList['maximum'] = '999';
+	        $productList['clearStock'] = '962452';
+	        $productList['price_discount'] = '962452';
+	        $productList['format_products_price'] = 'US$10.09';
+	        
+	        $productList['price'] = '962452';
+	        $productList['format_final_price'] = 'US$10.09';
+	        $productList['format_total_price'] = 'US$10.09';
+	        $productList['attributes'] = '962452';
+	        $productList['qty'] = $v['customers_basket_quantity'];
+	        $productList['cart_id'] = '962452';
+	        $productList['active'] = '962452';
+	        $productList['selected'] = '962452';
+	        $productList['attrs'] = '962452';
+	        $productList['weight'] = '962452';
+	        $productList['acce_main'] = '962452';
+	    }	    
 		
 		$blockList = array();
 		$blockList['619']['warehouse'] = '619';  
@@ -107,14 +110,38 @@ class shopcartModuleShopcart{
 		return $blockList; 
 	}
 	public function addProduct(){
-		$qty = $_POST['qty'];
+		$qty = $_POST['qty'];		
 		$warehouse = $_POST['warehouse'];
 		$attrs = $_POST['attrs'];
 		$products_id = $_POST['products_id'];
-		$result = $this->shopcartQuery->addToCart($qty,$warehouse,$attrs,$products_id);
-		return $result;
+		//判断这个产品是否已存在，已存在则更新，否则进行插入
+		$productsIdCheck = $this->shopcartQuery->productsIdCheck($products_id);
+		if($productsIdCheck){
+		    $this->shopcartQuery->updateQty($qty,$products_id);
+		}else{
+		    $this->shopcartQuery->addToCart($qty,$warehouse,$attrs,$products_id);
+		}	    
+		return "success in adding!";
+	}
+	/**
+	 * @desc 更新购物车产品数量
+	 * @author HollenMok 2016-04-21
+	 */
+	public function updateQty(){
+	    $qty = $_POST['qty'];		
+		$products_id = $_POST['products_id'];
+	    $this->shopcartQuery->updateQty($qty,$products_id);
+		return "success in updating!";
 	}
 	public function miniCart(){
+	    $customers_id = '2016042101';
+	    $productData = $this->shopcartQuery->getCartInfo($customers_id);
+	    foreach($productData as $k => $v){
+	        if($v['customers_id']==$customers_id){
+	            $qty = $v['customers_basket_quantity'];
+	        }
+	    }
+	    $qty = isset($qty)?$qty:$_POST['qty']; 
 		$cartProduct['count'] = "1"; 
 		$cartProduct['products']['962452{379}16344{380}16218']['ocart_id'] = "962452{379}16344{380}16218";
 		$cartProduct['products']['962452{379}16344{380}16218']['cart_id'] = "962452_379-16344_380-16218";
@@ -126,7 +153,7 @@ class shopcartModuleShopcart{
 		$cartProduct['products']['962452{379}16344{380}16218']['warehouse'] = "619";
 		$cartProduct['products']['962452{379}16344{380}16218']['maximum'] = "0";
 		$cartProduct['products']['962452{379}16344{380}16218']['clearStock'] = "0";
-		$cartProduct['products']['962452{379}16344{380}16218']['quantity'] = "1";
+		$cartProduct['products']['962452{379}16344{380}16218']['quantity'] = $qty;
 		$cartProduct['products']['962452{379}16344{380}16218']['final_price'] = "10.09";
 		$cartProduct['products']['962452{379}16344{380}16218']['format_final_price'] = "US$10.09";
 		$cartProduct['products']['962452{379}16344{380}16218']['attrList']['0']['options_name'] = "Color";
