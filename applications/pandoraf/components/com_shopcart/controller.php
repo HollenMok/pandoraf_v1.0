@@ -66,7 +66,15 @@ class ShopcartController{
 	    $result = $this->shopcartModuleShopcart->updateQty();
 	    echo $result;exit;	    
 	}
+	/**
+	 * @desc 设置paypal支付信息
+	 * @author HollenMok 2016-04-30
+	 */
 	public function setExpressCheckout(){
+	    //需要从session中取用户信息
+	    $customers_id = '2016042101';
+	    $productData = $this->shopcartModuleShopcart->shopcartQuery->getCartInfo($customers_id);
+
 		$serverName = $_SERVER['SERVER_NAME'];
 		$serverPort = $_SERVER['SERVER_PORT'];
 		$url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
@@ -74,7 +82,8 @@ class ShopcartController{
 		$cancelUrl = $url."/index.php";
 		$orderTotal = new BasicAmountType();
 		$orderTotal->currencyID = USD;
-		$orderTotal->value = 10.09;
+		//必须为两位小数
+		$orderTotal->value = round($productData[0]['final_price'],2);
 		$taxTotal = new BasicAmountType();
 		$taxTotal->currencyID = 'USD';
 		$taxTotal->value = '0.0';
@@ -82,13 +91,17 @@ class ShopcartController{
 		$itemDetails->Name = 'Sexy Plus Size V-Neck Short Sleeve Lace Hollow Out Dress(SKU189442)';
 		$itemDetails->Amount = $orderTotal;
 		
-		$itemDetails->Quantity = 1;
+		$itemDetails->Quantity = $productData[0]['customers_basket_quantity'];
 		$itemDetails->ItemCategory =  'Digital';
 		$PaymentDetails= new PaymentDetailsType();
 		$PaymentDetails->PaymentDetailsItem[0] = $itemDetails;
-		
+		$orderTotalValue = $itemDetails->Quantity * round($productData[0]['final_price'],2);;
+		$itemTotalValue = $itemDetails->Quantity * round($productData[0]['final_price'],2);;
+		$currencyCode = 'USD';
+		$paymentDetails->ItemTotal = new BasicAmountType($currencyCode, $itemTotalValue);
+		$PaymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
 		//$PaymentDetails->ShipToAddress = $address;
-		$PaymentDetails->OrderTotal = $orderTotal;
+		//$PaymentDetails->OrderTotal = $orderTotal;
 		/*
 		 * How you want to obtain payment. When implementing parallel payments, this field is required and must be set to Order. When implementing digital goods, this field is required and must be set to Sale
 		*/
@@ -96,8 +109,8 @@ class ShopcartController{
 		/*
 		 * Sum of cost of all items in this order. For digital goods, this field is required.
 		*/
-		$PaymentDetails->ItemTotal = $orderTotal;
-		$PaymentDetails->TaxTotal = $taxTotal;
+		//$PaymentDetails->ItemTotal = $orderTotal;
+		//$PaymentDetails->TaxTotal = $taxTotal;
 		
 		$setECReqDetails = new SetExpressCheckoutRequestDetailsType();
 		$setECReqDetails->BrandName = "pandoraf.com";
