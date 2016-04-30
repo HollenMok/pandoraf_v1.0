@@ -25,6 +25,10 @@ class shopcartDbqueryShopcart{
 	    $sql = 'update customers_basket set customers_basket_quantity=customers_basket_quantity+'.$qty.' where products_id='.$products_id;
 	    $this->dbInstance->dbQuery($sql);
 	}
+	public function changeQty($qty,$products_id){
+	    $sql = 'update customers_basket set customers_basket_quantity='.$qty.' where products_id='.$products_id;
+	    $this->dbInstance->dbQuery($sql);
+	}
 	public function getCountry(){
 		$sql = 'select * from countries';
 		$this->dbInstance->dbQuery($sql);

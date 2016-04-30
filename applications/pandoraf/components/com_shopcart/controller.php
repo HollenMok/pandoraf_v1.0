@@ -67,6 +67,14 @@ class ShopcartController{
 	    echo $result;exit;	    
 	}
 	/**
+	 * @desc 更改购物车产品数量
+	 * @author HollenMok 2016-05-1
+	 */
+	public function changeQty(){
+	    $result = $this->shopcartModuleShopcart->changeQty();
+	    echo json_encode($result);exit;
+	}
+	/**
 	 * @desc 设置paypal支付信息
 	 * @author HollenMok 2016-04-30
 	 */

@@ -133,6 +133,16 @@ class shopcartModuleShopcart{
 	    $this->shopcartQuery->updateQty($qty,$products_id);
 		return "success in updating!";
 	}
+	/**
+	 * @desc 更改购物车产品数量
+	 * @author HollenMok 2016-05-01
+	 */
+	public function changeQty(){
+	    $qty = $_POST['qty'];
+	    $products_id = $_POST['products_id'];
+	    $this->shopcartQuery->changeQty($qty,$products_id);
+	    return "success in changing qty!";
+	}
 	public function miniCart(){
 	    $customers_id = '2016042101';
 	    $productData = $this->shopcartQuery->getCartInfo($customers_id);
