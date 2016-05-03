@@ -42,5 +42,24 @@ $(document).on("click","#next",function(){
 		    }
 	   });
 	}
-
+});
+$(document).on("keyup","#qty",function(){
+	var qty = parseInt($("#qty").val());
+	var products_id = $("#products_id").val();
+	var reg = /^[0-9]$/;
+	if(!reg.test(qty)){
+		qty = 1;
+	}
+	$.ajax({
+     	data:{qty:qty,products_id:products_id},
+	    dataType:'json',
+	    type:'POST',
+	    url:'index.php?com=shopcart&t=changeQty',
+	    success:function(res){
+	    	window.location.reload();
+	    },
+	    error:function(){
+	    	alert("wrong!");
+	    }
+   });
 });
