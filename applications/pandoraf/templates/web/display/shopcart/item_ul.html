@@ -30,7 +30,7 @@
 			<input id="qty" type="text" autocomplete="off" maximum="{$item.maximum}" clearStock="{$item.clearStock}" name="qty" oldqty="{$item.quantity}" value="{$item.quantity}" cart_id="{$item.cart_id}" warehouse="{$block.warehouse}">
 			<input id="products_id" value ="{$item.products_id}" type="hidden"/>
 			<span id="next" class="next"></span>
-			<s id="maximum" str="{$LC_MAXIMUM}" {if $item.clearStock eq 0}style="display:none;"{/if}>{$LC_MAXIMUM}Maximum: {$item.maximum}</s>
+			<s id="maximum" str="" {if $item.clearStock eq 0}style="display:none;"{/if}>Maximum: {$item.maximum}</s>
 		</div>
 	</li>
 	<li class="td_price">
