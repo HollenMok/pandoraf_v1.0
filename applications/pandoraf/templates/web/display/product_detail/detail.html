@@ -59,7 +59,24 @@
                                     </div>
                              </div>                                                   
                      </div>
-                    <div class="goods_main_list">
+                  {foreach from=$attributes item=item key=option_id name=option}
+                     <div class="goods_main_list">
+                         <span class="title">{$item.name}:</span>   
+                         <div class="goods_main_attr" option_id="{$option_id}">
+                             <ul class="{if $item.smallImage}color{else}size{/if}">
+                                 {foreach from=$item.values item=value key=value_id name=optionValue}
+                                      {if $value.smallImage}
+                                        <img src="{$value.smallImage}" title="{$value.value_name}" alt="{$productInfo.products_name}" viewImage="{$value.viewImage}" largeImage="{$value.largeImage}" />
+                                      {else}
+                                        <li value_id="16218" value_name="" class=""> {$value.value_name}</li>
+                                      {/if}
+                                 {/foreach}
+                             </ul>
+                         </div>                     
+                     </div>
+                  {/foreach}
+                  <!--  
+                    <div class="goods_main_list">                    
                        <span class="title">Color:</span>
                        <div class="goods_main_attr" option_id="379" attr_data=0>
                             <ul class="color">
@@ -75,6 +92,7 @@
                             </ul>
                        </div>
                     </div>
+                   
                     <div class="goods_main_list">
                           <span class="title">size:</span>
                           <div class="goods_main_attr" option_id="380" attr_data="0">
@@ -87,7 +105,7 @@
                                 <span class="size_chart" ><a href="#size_charts">size chart</a></span>
                           </div>
                     </div>
-                    
+                     -->
                     <div class="goods_main_list">
                        <span class="title">Qty:</span>
                           <form id="detailCartForm">
