@@ -13,8 +13,8 @@ values ('1005','1000001','380','16218'),
  ('1008','1000001','380','16235');
 
 
-insert products(products_id,products_price,products_status) 
-values ('1000001',134.4900,1);
+insert products(products_id,products_price,products_status,products_sale_price,clear_stock) 
+values ('1000001',134.4900,1,134.4900,0);
 
 
 
