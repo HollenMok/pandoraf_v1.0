@@ -15,3 +15,11 @@ values ('1005','1000001','380','16218'),
 
 insert products(products_id,products_price,products_status) 
 values ('1000001',134.4900,1);
+
+
+
+insert products_to_categories(products_id,categories_id) 
+values ('1000001','1001');
+
+insert products_description(products_id,products_name) 
+values ('1000001','Women Short Sleeve Pure Color Cotton Linen Casual T-shirt');
