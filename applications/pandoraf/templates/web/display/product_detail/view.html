@@ -11,9 +11,9 @@
 <div class="goods_photo_min" style="visibility: visible;">
 	<div class="box">
 		<div style="width: 362px;">
-		   <ul>
-		  {foreach from=$productInfo.images_path item=item }
-		    <li class="active"><img big='/applications/pandoraf/templates/imgServer/{$products_id}/large/{$item}' ref="/applications/pandoraf/templates/imgServer/p{$products_id}/medium/{$item}" src='/applications/pandoraf/templates/imgServer/p{$products_id}/small/{$item}'/></li>
+		   <ul>		 
+		  {foreach from=$productInfo.images_path item=item }		     
+		    <li ><img big='/applications/pandoraf/templates/imgServer/{$products_id}/large/{$item}' ref="/applications/pandoraf/templates/imgServer/p{$products_id}/medium/{$item}" src='/applications/pandoraf/templates/imgServer/p{$products_id}/small/{$item}'/></li>
 		  {/foreach}
 		    <!--  
 		      <li ><img big='/applications/pandoraf/templates/imgServer/p962452/large/SKU189442 (8).jpg' ref="/applications/pandoraf/templates/imgServer/p962452/medium/SKU189442 (8).jpg" src='/applications/pandoraf/templates/imgServer/p962452/small/SKU189442 (8).jpg'/></li>
