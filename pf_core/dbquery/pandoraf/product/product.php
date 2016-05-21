@@ -34,6 +34,23 @@ class productDbqueryProduct{
 		$result = $this->dbInstance->getAll();
 		return $result['0'];
 	}
+	/*
+	 * @author mohuahuan
+	 * @date 2016/05/21
+	 * @desc 根据产品id获取产品属性
+	 */
+	public function getAttributes($products_id){
+	    $fields = "pa.options_id,po.products_options_name,pa.options_values_id,pov.products_options_values_name,pa.image_path"; 
+	    $joins = "join products_options as po on po.products_options_id=pa.options_id  join products_options_values pov on pa.options_values_id=pov.products_options_values_id";
+	    $orders = " ORDER BY pa.options_id";
+	    $sql = "select ".$fields." from products_attributes as pa ".$joins." where pa.products_id='".$products_id."'".$orders;
+	    
+	    $this->dbInstance->dbQuery($sql);
+	    $result = $this->dbInstance->getAll();
+	   
+	    return $result;
+	}
+   
 }
 
 

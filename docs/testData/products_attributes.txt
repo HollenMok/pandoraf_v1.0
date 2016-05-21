@@ -1,0 +1,17 @@
+产品属性颜色与尺寸数据样例
+
+insert products_attributes (products_attributes_id,products_id,options_id,options_values_id,image_path) 
+values ('1001','1000001','379','16224','/p1000001/attributes/p1000001_1.jpg'),
+ ('1002','1000001','379','16229','/p1000001/attributes/p1000001_2.jpg'),
+ ('1003','1000001','379','16221','/p1000001/attributes/p1000001_3.jpg'),
+ ('1004','1000001','379','16350','/p1000001/attributes/p1000001_4.jpg');
+
+insert products_attributes (products_attributes_id,products_id,options_id,options_values_id) 
+values ('1005','1000001','380','16218'),
+ ('1006','1000001','380','16234'),
+ ('1007','1000001','380','16233'),
+ ('1008','1000001','380','16235');
+
+
+insert products(products_id,products_price,products_status) 
+values ('1000001',134.4900,1);

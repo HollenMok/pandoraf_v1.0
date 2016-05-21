@@ -16,7 +16,7 @@ class productModuleProduct{
 		$this->productQuery = new productDbqueryProduct();
 	}
 	public function display(){
-		$products_id = '962452';
+		$products_id = $_GET['products_id'];
 		$productInfo['description'] = $this->productQuery->getDescription($products_id);
 	    $sizeData = $this->sizeAnalysis($productInfo['description']);
 	    $productInfo['sizeTable'] = $sizeData['inches'];
@@ -24,6 +24,10 @@ class productModuleProduct{
 	    $productInfo['centimeters'] = $sizeData['centimeters'];
 	    $productInfo['sizeText'] = $sizeData['sizeText'];
 	    $productInfo['description'] = $this->splitDescription($productInfo['description']);
+	    $generalInfo = $this->productQuery->getGeneralInfo($products_id);
+	    $productInfo['products_name'] = $generalInfo[0]['products_name'];
+	    $productInfo['images_path'] = $this->getImagesPath($products_id);
+	    $productInfo['firstImage'] = $productInfo['images_path'][0];
 		return $productInfo;
 	}
 	public function splitDescription($description){
@@ -133,6 +137,40 @@ class productModuleProduct{
 			}
 		}
 		return $sizeHead;
+	}
+	/*
+	 * @author mohuahuan 
+	 * @date 2016/05/21
+	 * @desc 根据产品id获取产品属性
+	 */
+	public function getAttributes($products_id){
+	    $attributes = $this->productQuery->getAttributes($products_id);
+	    //整理后的属性数据
+	    $attributes_arr = array();
+	    $image_dir = "/applications/pandoraf/templates/imgServer";
+	    foreach($attributes as $k =>$v){
+	            $attributes_arr[$v["options_id"]]['name'] =  $v['products_options_name']; 
+	            $attributes_arr[$v["options_id"]]['values'][$v['options_values_id']]['value_name'] =  $v['products_options_values_name'];
+	            //颜色属性才显示图片
+	            if($v["options_id"] == '379'){
+	                $attributes_arr[$v["options_id"]]['values'][$v['options_values_id']]['smallImage'] =  $image_dir.$v['image_path'];
+	            }	           
+	    }
+	    return $attributes_arr;
+	}
+	/*
+	 * @desc 获取产品图片路径信息
+	 * @author mohuahuan
+	 * @date 2016/05/21
+	 */
+	public function getImagesPath($products_id){
+	    //获取对应图片服务器文件夹图片名
+	    $image_dir = ROOT."/applications/pandoraf/templates/imgServer";
+	    $imageServer_path =  $image_dir."/p".$products_id."/large";
+	    $filenames = scandir($imageServer_path);
+	    array_shift($filenames);
+	    array_shift($filenames);
+	    return $filenames;
 	}
 }
 	
