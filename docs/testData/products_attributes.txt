@@ -23,3 +23,6 @@ values ('1000001','1001');
 
 insert products_description(products_id,products_name) 
 values ('1000001','Women Short Sleeve Pure Color Cotton Linen Casual T-shirt');
+
+INSERT INTO `products_options` VALUES (380, 1, 'size', 0, 32, NULL, 0, NULL);
+INSERT INTO `products_options` VALUES (379, 1, 'color', 0, 32, NULL, 0, NULL);
